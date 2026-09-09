@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GK & GS Quiz</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .quiz-container {
+            width: 100%;
+            max-width: 850px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #eeeeee;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #173b63;
+        }
+
+        .timer {
+            background: #173b63;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .progress-text {
+            color: #555;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #dddddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: #1769aa;
+            transition: width 0.3s;
+        }
+
+        .question {
+            font-size: 23px;
+            font-weight: bold;
+            line-height: 1.5;
+            color: #222222;
+            margin-bottom: 25px;
+        }
+
+        .option {
+            border: 2px solid #dddddd;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 12px 0;
+            cursor: pointer;
+            font-size: 17px;
+            transition: 0.2s;
+        }
+
+        .option:hover {
+            border-color: #1769aa;
+            background: #f0f7ff;
+        }
+
+        .option.selected {
+            border-color: #1769aa;
+            background: #e7f2ff;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            gap: 10px;
+        }
+
+        button {
+            border: none;
+            padding: 13px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #prevBtn {
+            background: #dddddd;
+            color: #222222;
+        }
+
+        #nextBtn {
+            background: #1769aa;
+            color: white;
+        }
+
+        #submitBtn {
+            background: #198754;
+            color: white;
+            display: none;
+        }
+
+        .result {
+            text-align: center;
+            display: none;
+        }
+
+        .result h1 {
+            color: #173b63;
+            margin-bottom: 15px;
+            font-size: 32px;
+        }
+
+        .score {
+            font-size: 55px;
+            font-weight: bold;
+            color: #198754;
+            margin: 20px;
+        }
+
+        .result p {
+            font-size: 18px;
+            margin: 10px;
+        }
+
+        .restart {
+            background: #1769aa;
+            color: white;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .quiz-container {
+                padding: 20px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .question {
+                font-size: 19px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="quiz-container">
+
+        <div id="quizScreen">
+
+            <div class="header">
+                <div class="logo">🇮🇳 GK & GS QUIZ</div>
+
+                <div class="timer">
+                    ⏱ <span id="time">10:00</span>
+                </div>
+            </div>
+
+            <div class="progress-text">
+                Question <span id="questionNumber">1</span>
+                of
+                <span id="totalQuestions">15</span>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div id="question" class="question"></div>
+
+            <div id="options"></div>
+
+            <div class="buttons">
+
+                <button id="prevBtn" onclick="previousQuestion()">
+                    ← Previous
+                </button>
+
+                <button id="nextBtn" onclick="nextQuestion()">
+                    Next →
+                </button>
+
+                <button id="submitBtn" onclick="submitQuiz()">
+                    Submit Quiz
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div id="resultScreen" class="result">
+
+            <h1>🎉 Quiz Completed!</h1>
+
+            <p>Your Score</p>
+
+            <div class="score">
+                <span id="score">0</span> /
+                <span id="maxScore">15</span>
+            </div>
+
+            <p id="percentage"></p>
+
+            <p id="message"></p>
+
+            <button class="restart" onclick="restartQuiz()">
+                🔄 Restart Quiz
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const questions = [
+
+            {
+                question: "भारत का राष्ट्रीय पशु कौन सा है?",
+                options: [
+                    "शेर",
+                    "बाघ",
+                    "हाथी",
+                    "चीता"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "भारत का संविधान कब लागू हुआ था?",
+                options: [
+                    "15 अगस्त 1947",
+                    "26 नवंबर 1949",
+                    "26 जनवरी 1950",
+                    "2 अक्टूबर 1950"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "भारत की राजधानी क्या है?",
+                options: [
+                    "मुंबई",
+                    "नई दिल्ली",
+                    "कोलकाता",
+                    "लखनऊ"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "भारत का सबसे बड़ा राज्य क्षेत्रफल के आधार पर कौन सा है?",
+                options: [
+                    "उत्तर प्रदेश",
+                    "मध्य प्रदेश",
+                    "राजस्थान",
+                    "महाराष्ट्र"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "भारतीय संविधान के निर्माता के रूप में किसे जाना जाता है?",
+                options: [
+                    "महात्मा गांधी",
+                    "डॉ. बी. आर. अंबेडकर",
+                    "जवाहरलाल नेहरू",
+                    "सरदार पटेल"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "पृथ्वी का एकमात्र प्राकृतिक उपग्रह कौन सा है?",
+                options: [
+                    "मंगल",
+                    "चंद्रमा",
+                    "सूर्य",
+                    "शुक्र"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "जल का रासायनिक सूत्र क्या है?",
+                options: [
+                    "CO₂",
+                    "O₂",
+                    "H₂O",
+                    "H₂SO₄"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "भारत में हरित क्रांति के जनक के रूप में किसे जाना जाता है?",
+                options: [
+                    "एम. एस. स्वामीनाथन",
+                    "विक्रम साराभाई",
+                    "होमी भाभा",
+                    "सी. वी. रमन"
+                ],
+                answer: 0
+            },
+
+            {
+                question: "सूर्य के सबसे निकट कौन सा ग्रह है?",
+                options: [
+                    "पृथ्वी",
+                    "शुक्र",
+                    "बुध",
+                    "मंगल"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "भारतीय रिजर्व बैंक की स्थापना किस वर्ष हुई थी?",
+                options: [
+                    "1935",
+                    "1947",
+                    "1950",
+                    "1925"
+                ],
+                answer: 0
+            },
+
+            {
+                question: "भारत का राष्ट्रीय पक्षी कौन सा है?",
+                options: [
+                    "तोता",
+                    "मोर",
+                    "कबूतर",
+                    "गरुड़"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "ताजमहल किस शहर में स्थित है?",
+                options: [
+                    "दिल्ली",
+                    "जयपुर",
+                    "आगरा",
+                    "लखनऊ"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "मानव शरीर में रक्त को पंप करने वाला अंग कौन सा है?",
+                options: [
+                    "फेफड़ा",
+                    "हृदय",
+                    "यकृत",
+                    "गुर्दा"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "भारत का राष्ट्रीय फूल कौन सा है?",
+                options: [
+                    "गुलाब",
+                    "कमल",
+                    "गेंदा",
+                    "सूरजमुखी"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "ISRO का पूरा नाम क्या है?",
+                options: [
+                    "Indian Space Research Organisation",
+                    "Indian Science Research Organisation",
+                    "International Space Research Organisation",
+                    "Indian Satellite Research Office"
+                ],
+                answer: 0
+            }
+
+        ];
+
+
+        let currentQuestion = 0;
+
+        let userAnswers =
+            new Array(questions.length).fill(null);
+
+        let timeLeft = 600;
+
+        let timer;
+
+
+        document.getElementById("totalQuestions").innerText =
+            questions.length;
+
+        document.getElementById("maxScore").innerText =
+            questions.length;
+
+
+        function startTimer() {
+
+            timer = setInterval(function () {
+
+                let minutes =
+                    Math.floor(timeLeft / 60);
+
+                let seconds =
+                    timeLeft % 60;
+
+                document.getElementById("time").innerText =
+                    String(minutes).padStart(2, "0")
+                    + ":"
+                    + String(seconds).padStart(2, "0");
+
+
+                if (timeLeft <= 0) {
+
+                    clearInterval(timer);
+
+                    submitQuiz();
+
+                }
+
+                timeLeft--;
+
+            }, 1000);
+        }
+
+
+        function loadQuestion() {
+
+            const q =
+                questions[currentQuestion];
+
+
+            document.getElementById("questionNumber").innerText =
+                currentQuestion + 1;
+
+
+            document.getElementById("question").innerText =
+                q.question;
+
+
+            const optionsDiv =
+                document.getElementById("options");
+
+
+            optionsDiv.innerHTML = "";
+
+
+            q.options.forEach(function (option, index) {
+
+                const div =
+                    document.createElement("div");
+
+
+                div.className = "option";
+
+
+                div.innerText =
+                    String.fromCharCode(65 + index)
+                    + ". "
+                    + option;
+
+
+                if (userAnswers[currentQuestion] === index) {
+
+                    div.classList.add("selected");
+
+                }
+
+
+                div.onclick = function () {
+
+                    userAnswers[currentQuestion] =
+                        index;
+
+
+                    document
+                        .querySelectorAll(".option")
+                        .forEach(function (item) {
+
+                            item.classList.remove("selected");
+
+                        });
+
+
+                    div.classList.add("selected");
+
+                };
+
+
+                optionsDiv.appendChild(div);
+
+            });
+
+
+            let progress =
+                ((currentQuestion + 1)
+                / questions.length)
+                * 100;
+
+
+            document.getElementById("progressFill").style.width =
+                progress + "%";
+
+
+            if (currentQuestion === 0) {
+
+                document.getElementById("prevBtn").style.visibility =
+                    "hidden";
+
+            } else {
+
+                document.getElementById("prevBtn").style.visibility =
+                    "visible";
+
+            }
+
+
+            if (currentQuestion === questions.length - 1) {
+
+                document.getElementById("nextBtn").style.display =
+                    "none";
+
+                document.getElementById("submitBtn").style.display =
+                    "block";
+
+            } else {
+
+                document.getElementById("nextBtn").style.display =
+                    "block";
+
+                document.getElementById("submitBtn").style.display =
+                    "none";
+
+            }
+
+        }
+
+
+        function nextQuestion() {
+
+            if (userAnswers[currentQuestion] === null) {
+
+                alert("Please select an answer first.");
+
+                return;
+
+            }
+
+
+            if (currentQuestion <
+                questions.length - 1) {
+
+                currentQuestion++;
+
+                loadQuestion();
+
+            }
+
+        }
+
+
+        function previousQuestion() {
+
+            if (currentQuestion > 0) {
+
+                currentQuestion--;
+
+                loadQuestion();
+
+            }
+
+        }
+
+
+        function submitQuiz() {
+
+            clearInterval(timer);
+
+
+            let score = 0;
+
+
+            questions.forEach(function (q, index) {
+
+                if (userAnswers[index] === q.answer) {
+
+                    score++;
+
+                }
+
+            });
+
+
+            document.getElementById("quizScreen").style.display =
+                "none";
+
+
+            document.getElementById("resultScreen").style.display =
+                "block";
+
+
+            document.getElementById("score").innerText =
+                score;
+
+
+            let percentage =
+                Math.round(
+                    (score / questions.length) * 100
+                );
+
+
+            document.getElementById("percentage").innerText =
+                "Percentage: " + percentage + "%";
+
+
+            let message;
+
+
+            if (percentage >= 80) {
+
+                message =
+                    "🔥 Excellent! Your GK preparation is strong.";
+
+            }
+
+            else if (percentage >= 60) {
+
+                message =
+                    "👍 Good job! Keep practicing.";
+
+            }
+
+            else if (percentage >= 40) {
+
+                message =
+                    "📚 Keep studying and improve your score.";
+
+            }
+
+            else {
+
+                message =
+                    "💪 Don't give up! Practice more.";
+
+            }
+
+
+            document.getElementById("message").innerText =
+                message;
+
+        }
+
+
+        function restartQuiz() {
+
+            clearInterval(timer);
+
+            currentQuestion = 0;
+
+            userAnswers =
+                new Array(questions.length).fill(null);
+
+            timeLeft = 600;
+
+            document.getElementById("quizScreen").style.display =
+                "block";
+
+            document.getElementById("resultScreen").style.display =
+                "none";
+
+            loadQuestion();
+
+            startTimer();
+
+        }
+
+
+        loadQuestion();
+
+        startTimer();
+
+    </script>
+
+</body>
+</html>
