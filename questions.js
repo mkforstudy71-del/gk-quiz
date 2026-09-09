@@ -12,13 +12,14 @@ const questions = [
         },
         options: {
             en: ["Lion", "Tiger", "Elephant", "Leopard"],
-            hi: ["शेर", "बाघ", "हाथी", "तेंदुआ"]
+            hi: ["सिंह", "बाघ", "हाथी", "तेंदुआ"]
         },
         answer: 1,
         explanation: {
             en: "The Bengal Tiger is the national animal of India.",
             hi: "बंगाल टाइगर भारत का राष्ट्रीय पशु है।"
-        }
+        },
+        hint: "It is a large striped wild cat."
     },
 
     {
@@ -28,14 +29,15 @@ const questions = [
             hi: "भारत का राष्ट्रीय पक्षी कौन सा है?"
         },
         options: {
-            en: ["Parrot", "Peacock", "Eagle", "Sparrow"],
-            hi: ["तोता", "मोर", "गरुड़", "गौरैया"]
+            en: ["Peacock", "Sparrow", "Eagle", "Swan"],
+            hi: ["मोर", "गौरैया", "गरुड़", "हंस"]
         },
-        answer: 1,
+        answer: 0,
         explanation: {
             en: "The Indian Peacock is the national bird of India.",
             hi: "भारतीय मोर भारत का राष्ट्रीय पक्षी है।"
-        }
+        },
+        hint: "It is famous for its colourful feathers."
     },
 
     {
@@ -45,14 +47,15 @@ const questions = [
             hi: "भारत का राष्ट्रीय फूल कौन सा है?"
         },
         options: {
-            en: ["Rose", "Lotus", "Sunflower", "Marigold"],
-            hi: ["गुलाब", "कमल", "सूरजमुखी", "गेंदा"]
+            en: ["Rose", "Lotus", "Sunflower", "Jasmine"],
+            hi: ["गुलाब", "कमल", "सूरजमुखी", "चमेली"]
         },
         answer: 1,
         explanation: {
             en: "Lotus is the national flower of India.",
             hi: "कमल भारत का राष्ट्रीय फूल है।"
-        }
+        },
+        hint: "It commonly grows in water."
     },
 
     {
@@ -69,25 +72,100 @@ const questions = [
         explanation: {
             en: "New Delhi is the capital of India.",
             hi: "नई दिल्ली भारत की राजधानी है।"
-        }
+        },
+        hint: "It is located in northern India."
     },
 
     {
         category: "GK",
         question: {
-            en: "Which is the largest state of India by area?",
-            hi: "क्षेत्रफल की दृष्टि से भारत का सबसे बड़ा राज्य कौन सा है?"
+            en: "Who was the first President of India?",
+            hi: "भारत के प्रथम राष्ट्रपति कौन थे?"
         },
         options: {
-            en: ["Uttar Pradesh", "Madhya Pradesh", "Rajasthan", "Maharashtra"],
-            hi: ["उत्तर प्रदेश", "मध्य प्रदेश", "राजस्थान", "महाराष्ट्र"]
+            en: ["Dr. Rajendra Prasad", "Dr. S. Radhakrishnan", "Jawaharlal Nehru", "Zakir Husain"],
+            hi: ["डॉ. राजेंद्र प्रसाद", "डॉ. एस. राधाकृष्णन", "जवाहरलाल नेहरू", "जाकिर हुसैन"]
+        },
+        answer: 0,
+        explanation: {
+            en: "Dr. Rajendra Prasad was the first President of India.",
+            hi: "डॉ. राजेंद्र प्रसाद भारत के प्रथम राष्ट्रपति थे।"
+        },
+        hint: "He served as President from 1950."
+    },
+
+    {
+        category: "GK",
+        question: {
+            en: "Who was the first Prime Minister of India?",
+            hi: "भारत के प्रथम प्रधानमंत्री कौन थे?"
+        },
+        options: {
+            en: ["Sardar Patel", "Jawaharlal Nehru", "Rajendra Prasad", "Lal Bahadur Shastri"],
+            hi: ["सरदार पटेल", "जवाहरलाल नेहरू", "राजेंद्र प्रसाद", "लाल बहादुर शास्त्री"]
+        },
+        answer: 1,
+        explanation: {
+            en: "Jawaharlal Nehru was the first Prime Minister of independent India.",
+            hi: "जवाहरलाल नेहरू स्वतंत्र भारत के प्रथम प्रधानमंत्री थे।"
+        },
+        hint: "He was a prominent leader of the Indian National Congress."
+    },
+
+    {
+        category: "GK",
+        question: {
+            en: "In which year did India become independent?",
+            hi: "भारत को स्वतंत्रता किस वर्ष मिली?"
+        },
+        options: {
+            en: ["1945", "1946", "1947", "1950"],
+            hi: ["1945", "1946", "1947", "1950"]
         },
         answer: 2,
         explanation: {
-            en: "Rajasthan is the largest Indian state by area.",
-            hi: "राजस्थान क्षेत्रफल की दृष्टि से भारत का सबसे बड़ा राज्य है।"
-        }
+            en: "India became independent on 15 August 1947.",
+            hi: "भारत 15 अगस्त 1947 को स्वतंत्र हुआ।"
+        },
+        hint: "Independence Day is celebrated every August."
     },
+
+    {
+        category: "GK",
+        question: {
+            en: "Which is the largest ocean in the world?",
+            hi: "विश्व का सबसे बड़ा महासागर कौन सा है?"
+        },
+        options: {
+            en: ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
+            hi: ["अटलांटिक महासागर", "हिंद महासागर", "प्रशांत महासागर", "आर्कटिक महासागर"]
+        },
+        answer: 2,
+        explanation: {
+            en: "The Pacific Ocean is the largest ocean.",
+            hi: "प्रशांत महासागर विश्व का सबसे बड़ा महासागर है।"
+        },
+        hint: "It lies between Asia and the Americas."
+    },
+
+    {
+        category: "GK",
+        question: {
+            en: "Which is the smallest continent?",
+            hi: "सबसे छोटा महाद्वीप कौन सा है?"
+        },
+        options: {
+            en: ["Europe", "Australia", "Antarctica", "South America"],
+            hi: ["यूरोप", "ऑस्ट्रेलिया", "अंटार्कटिका", "दक्षिण अमेरिका"]
+        },
+        answer: 1,
+        explanation: {
+            en: "Australia is the smallest continent by area.",
+            hi: "क्षेत्रफल के आधार पर ऑस्ट्रेलिया सबसे छोटा महाद्वीप है।"
+        },
+        hint: "It is also a country."
+    },
+
 
     // =========================
     // POLITY
@@ -100,51 +178,69 @@ const questions = [
             hi: "भारत का संविधान कब लागू हुआ?"
         },
         options: {
-            en: [
-                "15 August 1947",
-                "26 November 1949",
-                "26 January 1950",
-                "2 October 1950"
-            ],
-            hi: [
-                "15 अगस्त 1947",
-                "26 नवंबर 1949",
-                "26 जनवरी 1950",
-                "2 अक्टूबर 1950"
-            ]
+            en: ["15 August 1947", "26 November 1949", "26 January 1950", "2 October 1950"],
+            hi: ["15 अगस्त 1947", "26 नवंबर 1949", "26 जनवरी 1950", "2 अक्टूबर 1950"]
         },
         answer: 2,
         explanation: {
             en: "The Constitution of India came into effect on 26 January 1950.",
-            hi: "भारत का संविधान 26 जनवरी 1950 को लागू हुआ था।"
-        }
+            hi: "भारत का संविधान 26 जनवरी 1950 को लागू हुआ।"
+        },
+        hint: "This date is celebrated as Republic Day."
     },
 
     {
         category: "Polity",
         question: {
-            en: "Who is known as the chief architect of the Indian Constitution?",
-            hi: "भारतीय संविधान के मुख्य वास्तुकार के रूप में किसे जाना जाता है?"
+            en: "Who was the Chairman of the Drafting Committee of the Constituent Assembly?",
+            hi: "संविधान सभा की प्रारूप समिति के अध्यक्ष कौन थे?"
         },
         options: {
-            en: [
-                "Mahatma Gandhi",
-                "Dr. B. R. Ambedkar",
-                "Jawaharlal Nehru",
-                "Sardar Patel"
-            ],
-            hi: [
-                "महात्मा गांधी",
-                "डॉ. बी. आर. अंबेडकर",
-                "जवाहरलाल नेहरू",
-                "सरदार पटेल"
-            ]
+            en: ["Mahatma Gandhi", "Dr. B. R. Ambedkar", "Jawaharlal Nehru", "Sardar Patel"],
+            hi: ["महात्मा गांधी", "डॉ. बी. आर. आंबेडकर", "जवाहरलाल नेहरू", "सरदार पटेल"]
         },
         answer: 1,
         explanation: {
-            en: "Dr. B. R. Ambedkar chaired the Drafting Committee of the Constitution.",
-            hi: "डॉ. बी. आर. अंबेडकर संविधान की प्रारूप समिति के अध्यक्ष थे।"
-        }
+            en: "Dr. B. R. Ambedkar was the Chairman of the Drafting Committee.",
+            hi: "डॉ. बी. आर. आंबेडकर प्रारूप समिति के अध्यक्ष थे।"
+        },
+        hint: "He is known as the chief architect of the Indian Constitution."
+    },
+
+    {
+        category: "Polity",
+        question: {
+            en: "What is the minimum age required to become the President of India?",
+            hi: "भारत का राष्ट्रपति बनने के लिए न्यूनतम आयु कितनी होनी चाहिए?"
+        },
+        options: {
+            en: ["25 years", "30 years", "35 years", "40 years"],
+            hi: ["25 वर्ष", "30 वर्ष", "35 वर्ष", "40 वर्ष"]
+        },
+        answer: 2,
+        explanation: {
+            en: "A person must be at least 35 years old to become President of India.",
+            hi: "भारत का राष्ट्रपति बनने के लिए व्यक्ति की आयु कम से कम 35 वर्ष होनी चाहिए।"
+        },
+        hint: "It is higher than the minimum age for Lok Sabha membership."
+    },
+
+    {
+        category: "Polity",
+        question: {
+            en: "Fundamental Rights are mentioned in which Part of the Indian Constitution?",
+            hi: "मौलिक अधिकार भारतीय संविधान के किस भाग में हैं?"
+        },
+        options: {
+            en: ["Part I", "Part II", "Part III", "Part IV"],
+            hi: ["भाग I", "भाग II", "भाग III", "भाग IV"]
+        },
+        answer: 2,
+        explanation: {
+            en: "Fundamental Rights are contained in Part III of the Constitution.",
+            hi: "मौलिक अधिकार संविधान के भाग III में दिए गए हैं।"
+        },
+        hint: "Directive Principles are in the following part."
     },
 
     {
@@ -159,44 +255,84 @@ const questions = [
         },
         answer: 1,
         explanation: {
-            en: "There are currently six Fundamental Rights.",
+            en: "There are six Fundamental Rights at present.",
             hi: "वर्तमान में छह मौलिक अधिकार हैं।"
-        }
+        },
+        hint: "One right was removed from the list by the 44th Amendment."
     },
 
     {
         category: "Polity",
         question: {
-            en: "What is the minimum age to become the President of India?",
-            hi: "भारत का राष्ट्रपति बनने की न्यूनतम आयु कितनी है?"
+            en: "Who is the constitutional head of the Union of India?",
+            hi: "भारत संघ का संवैधानिक प्रमुख कौन है?"
         },
         options: {
-            en: ["25 years", "30 years", "35 years", "40 years"],
-            hi: ["25 वर्ष", "30 वर्ष", "35 वर्ष", "40 वर्ष"]
+            en: ["Prime Minister", "President", "Chief Justice", "Home Minister"],
+            hi: ["प्रधानमंत्री", "राष्ट्रपति", "मुख्य न्यायाधीश", "गृह मंत्री"]
         },
-        answer: 2,
+        answer: 1,
         explanation: {
-            en: "A person must be at least 35 years old to be eligible for the office of President.",
-            hi: "राष्ट्रपति पद के लिए न्यूनतम आयु 35 वर्ष है।"
-        }
+            en: "The President is the constitutional head of the Union.",
+            hi: "राष्ट्रपति भारत संघ के संवैधानिक प्रमुख हैं।"
+        },
+        hint: "The office is mentioned at the beginning of the Union executive provisions."
     },
 
     {
         category: "Polity",
         question: {
-            en: "Which part of the Constitution deals with Fundamental Rights?",
-            hi: "संविधान का कौन सा भाग मौलिक अधिकारों से संबंधित है?"
+            en: "Which house of Parliament is known as the House of the People?",
+            hi: "संसद के किस सदन को जनता का सदन कहा जाता है?"
         },
         options: {
-            en: ["Part I", "Part II", "Part III", "Part IV"],
-            hi: ["भाग I", "भाग II", "भाग III", "भाग IV"]
+            en: ["Rajya Sabha", "Lok Sabha", "Vidhan Sabha", "Vidhan Parishad"],
+            hi: ["राज्यसभा", "लोकसभा", "विधानसभा", "विधान परिषद"]
+        },
+        answer: 1,
+        explanation: {
+            en: "Lok Sabha is known as the House of the People.",
+            hi: "लोकसभा को जनता का सदन कहा जाता है।"
+        },
+        hint: "Members are directly elected by the people."
+    },
+
+    {
+        category: "Polity",
+        question: {
+            en: "What is the normal term of the Lok Sabha?",
+            hi: "लोकसभा का सामान्य कार्यकाल कितना होता है?"
+        },
+        options: {
+            en: ["3 years", "4 years", "5 years", "6 years"],
+            hi: ["3 वर्ष", "4 वर्ष", "5 वर्ष", "6 वर्ष"]
         },
         answer: 2,
         explanation: {
-            en: "Fundamental Rights are contained in Part III of the Constitution.",
-            hi: "मौलिक अधिकार संविधान के भाग III में दिए गए हैं।"
-        }
+            en: "The normal term of the Lok Sabha is five years.",
+            hi: "लोकसभा का सामान्य कार्यकाल पाँच वर्ष होता है।"
+        },
+        hint: "General elections normally occur after this period."
     },
+
+    {
+        category: "Polity",
+        question: {
+            en: "Who appoints the Prime Minister of India?",
+            hi: "भारत के प्रधानमंत्री की नियुक्ति कौन करता है?"
+        },
+        options: {
+            en: ["President", "Chief Justice", "Lok Sabha Speaker", "Election Commission"],
+            hi: ["राष्ट्रपति", "मुख्य न्यायाधीश", "लोकसभा अध्यक्ष", "निर्वाचन आयोग"]
+        },
+        answer: 0,
+        explanation: {
+            en: "The President appoints the Prime Minister.",
+            hi: "प्रधानमंत्री की नियुक्ति राष्ट्रपति करते हैं।"
+        },
+        hint: "The appointment is made under Article 75."
+    },
+
 
     // =========================
     // HISTORY
@@ -206,81 +342,18 @@ const questions = [
         category: "History",
         question: {
             en: "Who founded the Maurya Empire?",
-            hi: "मौर्य साम्राज्य की स्थापना किसने की थी?"
+            hi: "मौर्य साम्राज्य की स्थापना किसने की?"
         },
         options: {
-            en: [
-                "Ashoka",
-                "Chandragupta Maurya",
-                "Bindusara",
-                "Harshavardhana"
-            ],
-            hi: [
-                "अशोक",
-                "चंद्रगुप्त मौर्य",
-                "बिंदुसार",
-                "हर्षवर्धन"
-            ]
+            en: ["Ashoka", "Chandragupta Maurya", "Bindusara", "Harshavardhana"],
+            hi: ["अशोक", "चंद्रगुप्त मौर्य", "बिंदुसार", "हर्षवर्धन"]
         },
         answer: 1,
         explanation: {
-            en: "Chandragupta Maurya founded the Maurya Empire around 322 BCE.",
-            hi: "चंद्रगुप्त मौर्य ने लगभग 322 ईसा पूर्व मौर्य साम्राज्य की स्थापना की थी।"
-        }
-    },
-
-    {
-        category: "History",
-        question: {
-            en: "Who was known as the Iron Man of India?",
-            hi: "भारत के लौह पुरुष के नाम से किसे जाना जाता है?"
+            en: "Chandragupta Maurya founded the Maurya Empire.",
+            hi: "चंद्रगुप्त मौर्य ने मौर्य साम्राज्य की स्थापना की।"
         },
-        options: {
-            en: [
-                "Subhas Chandra Bose",
-                "Sardar Vallabhbhai Patel",
-                "Bhagat Singh",
-                "Rajendra Prasad"
-            ],
-            hi: [
-                "सुभाष चंद्र बोस",
-                "सरदार वल्लभभाई पटेल",
-                "भगत सिंह",
-                "राजेंद्र प्रसाद"
-            ]
-        },
-        answer: 1,
-        explanation: {
-            en: "Sardar Vallabhbhai Patel is popularly known as the Iron Man of India.",
-            hi: "सरदार वल्लभभाई पटेल को भारत का लौह पुरुष कहा जाता है।"
-        }
-    },
-
-    {
-        category: "History",
-        question: {
-            en: "Who gave the slogan 'Jai Hind' popular prominence during India's freedom struggle?",
-            hi: "भारत के स्वतंत्रता संग्राम के दौरान 'जय हिंद' को लोकप्रिय बनाने वाले नेता कौन थे?"
-        },
-        options: {
-            en: [
-                "Subhas Chandra Bose",
-                "Mahatma Gandhi",
-                "Bal Gangadhar Tilak",
-                "Lala Lajpat Rai"
-            ],
-            hi: [
-                "सुभाष चंद्र बोस",
-                "महात्मा गांधी",
-                "बाल गंगाधर तिलक",
-                "लाला लाजपत राय"
-            ]
-        },
-        answer: 0,
-        explanation: {
-            en: "Subhas Chandra Bose and the Indian National Army popularized the slogan Jai Hind.",
-            hi: "सुभाष चंद्र बोस और आजाद हिंद फौज ने 'जय हिंद' को लोकप्रिय बनाया।"
-        }
+        hint: "He was guided by Chanakya."
     },
 
     {
@@ -290,52 +363,161 @@ const questions = [
             hi: "भारत में मुगल साम्राज्य की स्थापना किसने की?"
         },
         options: {
-            en: [
-                "Akbar",
-                "Babur",
-                "Humayun",
-                "Shah Jahan"
-            ],
-            hi: [
-                "अकबर",
-                "बाबर",
-                "हुमायूँ",
-                "शाहजहाँ"
-            ]
+            en: ["Akbar", "Babur", "Humayun", "Shah Jahan"],
+            hi: ["अकबर", "बाबर", "हुमायूँ", "शाहजहाँ"]
         },
         answer: 1,
         explanation: {
-            en: "Babur founded the Mughal Empire after the First Battle of Panipat in 1526.",
-            hi: "1526 में प्रथम पानीपत के युद्ध के बाद बाबर ने भारत में मुगल साम्राज्य की स्थापना की।"
-        }
+            en: "Babur founded the Mughal Empire after the First Battle of Panipat.",
+            hi: "बाबर ने पानीपत के प्रथम युद्ध के बाद मुगल साम्राज्य की स्थापना की।"
+        },
+        hint: "He defeated Ibrahim Lodi in 1526."
     },
 
     {
         category: "History",
         question: {
-            en: "Who built the Taj Mahal?",
-            hi: "ताजमहल का निर्माण किसने करवाया था?"
+            en: "Who commissioned the construction of the Taj Mahal?",
+            hi: "ताजमहल का निर्माण किस मुगल शासक ने करवाया?"
         },
         options: {
-            en: [
-                "Akbar",
-                "Shah Jahan",
-                "Aurangzeb",
-                "Jahangir"
-            ],
-            hi: [
-                "अकबर",
-                "शाहजहाँ",
-                "औरंगजेब",
-                "जहाँगीर"
-            ]
+            en: ["Akbar", "Jahangir", "Shah Jahan", "Aurangzeb"],
+            hi: ["अकबर", "जहाँगीर", "शाहजहाँ", "औरंगजेब"]
+        },
+        answer: 2,
+        explanation: {
+            en: "Shah Jahan commissioned the Taj Mahal in memory of Mumtaz Mahal.",
+            hi: "शाहजहाँ ने मुमताज महल की स्मृति में ताजमहल बनवाया।"
+        },
+        hint: "He was the father of Aurangzeb."
+    },
+
+    {
+        category: "History",
+        question: {
+            en: "Who is popularly known as the Iron Man of India?",
+            hi: "भारत के लौह पुरुष के नाम से किसे जाना जाता है?"
+        },
+        options: {
+            en: ["Sardar Vallabhbhai Patel", "Subhas Chandra Bose", "Bhagat Singh", "Bal Gangadhar Tilak"],
+            hi: ["सरदार वल्लभभाई पटेल", "सुभाष चंद्र बोस", "भगत सिंह", "बाल गंगाधर तिलक"]
+        },
+        answer: 0,
+        explanation: {
+            en: "Sardar Vallabhbhai Patel is popularly known as the Iron Man of India.",
+            hi: "सरदार वल्लभभाई पटेल को भारत का लौह पुरुष कहा जाता है।"
+        },
+        hint: "He played a major role in integrating princely states."
+    },
+
+    {
+        category: "History",
+        question: {
+            en: "Who gave the slogan 'Jai Hind' its famous national prominence?",
+            hi: "'जय हिंद' नारे को राष्ट्रीय स्तर पर लोकप्रिय बनाने वालों में प्रमुख कौन थे?"
+        },
+        options: {
+            en: ["Subhas Chandra Bose", "Mahatma Gandhi", "Bal Gangadhar Tilak", "Dadabhai Naoroji"],
+            hi: ["सुभाष चंद्र बोस", "महात्मा गांधी", "बाल गंगाधर तिलक", "दादाभाई नौरोजी"]
+        },
+        answer: 0,
+        explanation: {
+            en: "Subhas Chandra Bose and the Indian National Army popularized the greeting Jai Hind.",
+            hi: "सुभाष चंद्र बोस और आजाद हिंद फौज ने 'जय हिंद' को व्यापक रूप से लोकप्रिय बनाया।"
+        },
+        hint: "Think of the Indian National Army."
+    },
+
+    {
+        category: "History",
+        question: {
+            en: "The First Battle of Panipat was fought in which year?",
+            hi: "पानीपत का प्रथम युद्ध किस वर्ष हुआ था?"
+        },
+        options: {
+            en: ["1526", "1556", "1761", "1857"],
+            hi: ["1526", "1556", "1761", "1857"]
+        },
+        answer: 0,
+        explanation: {
+            en: "The First Battle of Panipat was fought in 1526.",
+            hi: "पानीपत का प्रथम युद्ध 1526 में हुआ था।"
+        },
+        hint: "It marked the beginning of Mughal rule in India."
+    },
+
+    {
+        category: "History",
+        question: {
+            en: "Who founded the Indian National Congress along with other early leaders in 1885?",
+            hi: "1885 में अन्य नेताओं के साथ भारतीय राष्ट्रीय कांग्रेस की स्थापना में प्रमुख भूमिका किसने निभाई?"
+        },
+        options: {
+            en: ["A. O. Hume", "Lord Curzon", "Warren Hastings", "Robert Clive"],
+            hi: ["ए. ओ. ह्यूम", "लॉर्ड कर्जन", "वॉरेन हेस्टिंग्स", "रॉबर्ट क्लाइव"]
+        },
+        answer: 0,
+        explanation: {
+            en: "A. O. Hume played a key role in founding the Indian National Congress in 1885.",
+            hi: "ए. ओ. ह्यूम ने 1885 में भारतीय राष्ट्रीय कांग्रेस की स्थापना में महत्वपूर्ण भूमिका निभाई।"
+        },
+        hint: "He was a retired British civil servant."
+    },
+
+    {
+        category: "History",
+        question: {
+            en: "Who led the Dandi March in 1930?",
+            hi: "1930 में दांडी मार्च का नेतृत्व किसने किया?"
+        },
+        options: {
+            en: ["Mahatma Gandhi", "Jawaharlal Nehru", "Sardar Patel", "Subhas Chandra Bose"],
+            hi: ["महात्मा गांधी", "जवाहरलाल नेहरू", "सरदार पटेल", "सुभाष चंद्र बोस"]
+        },
+        answer: 0,
+        explanation: {
+            en: "Mahatma Gandhi led the Dandi March against the British salt law.",
+            hi: "महात्मा गांधी ने ब्रिटिश नमक कानून के विरोध में दांडी मार्च का नेतृत्व किया।"
+        },
+        hint: "It was part of the Civil Disobedience Movement."
+    },
+
+    {
+        category: "History",
+        question: {
+            en: "The Quit India Movement was launched in which year?",
+            hi: "भारत छोड़ो आंदोलन किस वर्ष शुरू हुआ?"
+        },
+        options: {
+            en: ["1930", "1935", "1942", "1947"],
+            hi: ["1930", "1935", "1942", "1947"]
+        },
+        answer: 2,
+        explanation: {
+            en: "The Quit India Movement was launched in August 1942.",
+            hi: "भारत छोड़ो आंदोलन अगस्त 1942 में शुरू हुआ था।"
+        },
+        hint: "Its famous call was 'Do or Die'."
+    },
+
+    {
+        category: "History",
+        question: {
+            en: "Who was the founder of the Gupta dynasty?",
+            hi: "गुप्त वंश का संस्थापक कौन था?"
+        },
+        options: {
+            en: ["Chandragupta I", "Sri Gupta", "Samudragupta", "Skandagupta"],
+            hi: ["चंद्रगुप्त प्रथम", "श्रीगुप्त", "समुद्रगुप्त", "स्कंदगुप्त"]
         },
         answer: 1,
         explanation: {
-            en: "Mughal Emperor Shah Jahan commissioned the Taj Mahal.",
-            hi: "मुगल सम्राट शाहजहाँ ने ताजमहल का निर्माण करवाया था।"
-        }
+            en: "Sri Gupta is generally regarded as the founder of the Gupta dynasty.",
+            hi: "श्रीगुप्त को सामान्यतः गुप्त वंश का संस्थापक माना जाता है।"
+        },
+        hint: "His name contains the dynasty's name."
     },
+
 
     // =========================
     // GEOGRAPHY
@@ -344,18 +526,37 @@ const questions = [
     {
         category: "Geography",
         question: {
-            en: "Which is the longest river in India?",
-            hi: "भारत की सबसे लंबी नदी कौन सी है?"
+            en: "Which is the largest state of India by area?",
+            hi: "क्षेत्रफल के आधार पर भारत का सबसे बड़ा राज्य कौन सा है?"
         },
         options: {
-            en: ["Yamuna", "Ganga", "Godavari", "Narmada"],
-            hi: ["यमुना", "गंगा", "गोदावरी", "नर्मदा"]
+            en: ["Madhya Pradesh", "Maharashtra", "Rajasthan", "Uttar Pradesh"],
+            hi: ["मध्य प्रदेश", "महाराष्ट्र", "राजस्थान", "उत्तर प्रदेश"]
+        },
+        answer: 2,
+        explanation: {
+            en: "Rajasthan is the largest Indian state by area.",
+            hi: "राजस्थान क्षेत्रफल के आधार पर भारत का सबसे बड़ा राज्य है।"
+        },
+        hint: "The Thar Desert is largely located here."
+    },
+
+    {
+        category: "Geography",
+        question: {
+            en: "Which Indian state has the longest coastline?",
+            hi: "भारत के किस राज्य की समुद्री तटरेखा सबसे लंबी है?"
+        },
+        options: {
+            en: ["Tamil Nadu", "Gujarat", "Maharashtra", "Andhra Pradesh"],
+            hi: ["तमिलनाडु", "गुजरात", "महाराष्ट्र", "आंध्र प्रदेश"]
         },
         answer: 1,
         explanation: {
-            en: "The Ganga is generally regarded as India's longest river.",
-            hi: "गंगा को सामान्यतः भारत की सबसे लंबी नदी माना जाता है।"
-        }
+            en: "Gujarat has the longest coastline among Indian states.",
+            hi: "भारतीय राज्यों में गुजरात की समुद्री तटरेखा सबसे लंबी है।"
+        },
+        hint: "It lies on the Arabian Sea."
     },
 
     {
@@ -365,48 +566,87 @@ const questions = [
             hi: "भारत की सबसे ऊँची पर्वत चोटी कौन सी है?"
         },
         options: {
-            en: ["K2", "Kangchenjunga", "Nanda Devi", "Kamet"],
-            hi: ["K2", "कंचनजंघा", "नंदा देवी", "कामेत"]
+            en: ["Nanda Devi", "Kangchenjunga", "Anamudi", "Kamet"],
+            hi: ["नंदा देवी", "कंचनजंगा", "अनामुडी", "कामेत"]
         },
         answer: 1,
         explanation: {
-            en: "Kangchenjunga is the highest mountain peak located in India.",
-            hi: "कंचनजंघा भारत में स्थित सबसे ऊँची पर्वत चोटी है।"
-        }
+            en: "Kangchenjunga is the highest mountain peak in India.",
+            hi: "कंचनजंगा भारत की सबसे ऊँची पर्वत चोटी है।"
+        },
+        hint: "It is located in the Himalayas near Sikkim."
     },
 
     {
         category: "Geography",
         question: {
-            en: "Which desert is located in India?",
-            hi: "भारत में कौन सा मरुस्थल स्थित है?"
+            en: "The Thar Desert is mainly located in which Indian state?",
+            hi: "थार मरुस्थल मुख्य रूप से भारत के किस राज्य में स्थित है?"
         },
         options: {
-            en: ["Sahara", "Gobi", "Thar", "Kalahari"],
-            hi: ["सहारा", "गोबी", "थार", "कालाहारी"]
+            en: ["Rajasthan", "Gujarat", "Punjab", "Haryana"],
+            hi: ["राजस्थान", "गुजरात", "पंजाब", "हरियाणा"]
         },
-        answer: 2,
+        answer: 0,
         explanation: {
             en: "The Thar Desert is mainly located in Rajasthan.",
             hi: "थार मरुस्थल मुख्य रूप से राजस्थान में स्थित है।"
-        }
+        },
+        hint: "It is India's largest desert region."
     },
 
     {
         category: "Geography",
         question: {
-            en: "Which state has the longest coastline in India?",
-            hi: "भारत में सबसे लंबी समुद्री तटरेखा किस राज्य की है?"
+            en: "Which river is known as the longest river in India?",
+            hi: "भारत में सबसे लंबी नदी कौन सी मानी जाती है?"
         },
         options: {
-            en: ["Tamil Nadu", "Gujarat", "Maharashtra", "Kerala"],
-            hi: ["तमिलनाडु", "गुजरात", "महाराष्ट्र", "केरल"]
+            en: ["Yamuna", "Ganga", "Godavari", "Narmada"],
+            hi: ["यमुना", "गंगा", "गोदावरी", "नर्मदा"]
         },
         answer: 1,
         explanation: {
-            en: "Gujarat has the longest coastline among Indian states.",
-            hi: "भारतीय राज्यों में गुजरात की समुद्री तटरेखा सबसे लंबी है।"
-        }
+            en: "The Ganga is generally regarded as the longest river within India.",
+            hi: "गंगा को सामान्यतः भारत में सबसे लंबी नदी माना जाता है।"
+        },
+        hint: "It flows through northern India."
+    },
+
+    {
+        category: "Geography",
+        question: {
+            en: "Which is the largest freshwater lake in India by surface area?",
+            hi: "क्षेत्रफल के आधार पर भारत की सबसे बड़ी मीठे पानी की झील कौन सी है?"
+        },
+        options: {
+            en: ["Wular Lake", "Dal Lake", "Loktak Lake", "Chilika Lake"],
+            hi: ["वूलर झील", "डल झील", "लोकटक झील", "चिलिका झील"]
+        },
+        answer: 0,
+        explanation: {
+            en: "Wular Lake in Jammu and Kashmir is India's largest freshwater lake by surface area.",
+            hi: "जम्मू-कश्मीर की वूलर झील क्षेत्रफल के आधार पर भारत की सबसे बड़ी मीठे पानी की झील है।"
+        },
+        hint: "It is located in Jammu and Kashmir."
+    },
+
+    {
+        category: "Geography",
+        question: {
+            en: "Which imaginary line divides Earth into the Northern and Southern Hemispheres?",
+            hi: "पृथ्वी को उत्तरी और दक्षिणी गोलार्ध में बाँटने वाली काल्पनिक रेखा कौन सी है?"
+        },
+        options: {
+            en: ["Prime Meridian", "Equator", "Tropic of Cancer", "Arctic Circle"],
+            hi: ["प्रधान मध्याह्न रेखा", "भूमध्य रेखा", "कर्क रेखा", "आर्कटिक वृत्त"]
+        },
+        answer: 1,
+        explanation: {
+            en: "The Equator divides Earth into the Northern and Southern Hemispheres.",
+            hi: "भूमध्य रेखा पृथ्वी को उत्तरी और दक्षिणी गोलार्ध में विभाजित करती है।"
+        },
+        hint: "Its latitude is 0°."
     },
 
     {
@@ -416,15 +656,35 @@ const questions = [
             hi: "किस ग्रह को लाल ग्रह कहा जाता है?"
         },
         options: {
-            en: ["Venus", "Mars", "Jupiter", "Saturn"],
-            hi: ["शुक्र", "मंगल", "बृहस्पति", "शनि"]
+            en: ["Venus", "Mars", "Jupiter", "Mercury"],
+            hi: ["शुक्र", "मंगल", "बृहस्पति", "बुध"]
         },
         answer: 1,
         explanation: {
             en: "Mars appears reddish because of iron oxide on its surface.",
-            hi: "मंगल की सतह पर आयरन ऑक्साइड के कारण यह लाल दिखाई देता है।"
-        }
+            hi: "मंगल की सतह पर लौह ऑक्साइड के कारण यह लाल दिखाई देता है।"
+        },
+        hint: "It is the fourth planet from the Sun."
     },
+
+    {
+        category: "Geography",
+        question: {
+            en: "Which is the largest planet in the Solar System?",
+            hi: "सौरमंडल का सबसे बड़ा ग्रह कौन सा है?"
+        },
+        options: {
+            en: ["Saturn", "Earth", "Jupiter", "Neptune"],
+            hi: ["शनि", "पृथ्वी", "बृहस्पति", "नेपच्यून"]
+        },
+        answer: 2,
+        explanation: {
+            en: "Jupiter is the largest planet in the Solar System.",
+            hi: "बृहस्पति सौरमंडल का सबसे बड़ा ग्रह है।"
+        },
+        hint: "It is a gas giant."
+    },
+
 
     // =========================
     // SCIENCE
@@ -437,14 +697,15 @@ const questions = [
             hi: "जल का रासायनिक सूत्र क्या है?"
         },
         options: {
-            en: ["CO2", "O2", "H2O", "NaCl"],
-            hi: ["CO₂", "O₂", "H₂O", "NaCl"]
+            en: ["CO₂", "H₂O", "O₂", "NaCl"],
+            hi: ["CO₂", "H₂O", "O₂", "NaCl"]
         },
-        answer: 2,
+        answer: 1,
         explanation: {
-            en: "Water consists of two hydrogen atoms and one oxygen atom, H2O.",
+            en: "Water consists of two hydrogen atoms and one oxygen atom, giving H₂O.",
             hi: "जल में दो हाइड्रोजन और एक ऑक्सीजन परमाणु होते हैं, इसलिए इसका सूत्र H₂O है।"
-        }
+        },
+        hint: "It contains hydrogen and oxygen."
     },
 
     {
@@ -454,14 +715,15 @@ const questions = [
             hi: "मानव शरीर में रक्त को पूरे शरीर में कौन सा अंग पंप करता है?"
         },
         options: {
-            en: ["Lungs", "Heart", "Liver", "Kidney"],
-            hi: ["फेफड़े", "हृदय", "यकृत", "गुर्दा"]
+            en: ["Lungs", "Heart", "Kidney", "Liver"],
+            hi: ["फेफड़े", "हृदय", "गुर्दा", "यकृत"]
         },
         answer: 1,
         explanation: {
             en: "The heart pumps blood throughout the body.",
             hi: "हृदय पूरे शरीर में रक्त पंप करता है।"
-        }
+        },
+        hint: "It beats continuously."
     },
 
     {
@@ -471,14 +733,15 @@ const questions = [
             hi: "बल की SI इकाई क्या है?"
         },
         options: {
-            en: ["Joule", "Watt", "Newton", "Pascal"],
-            hi: ["जूल", "वाट", "न्यूटन", "पास्कल"]
+            en: ["Joule", "Newton", "Watt", "Pascal"],
+            hi: ["जूल", "न्यूटन", "वाट", "पास्कल"]
         },
-        answer: 2,
+        answer: 1,
         explanation: {
-            en: "The SI unit of force is Newton (N).",
-            hi: "बल की SI इकाई न्यूटन (N) है।"
-        }
+            en: "Newton is the SI unit of force.",
+            hi: "न्यूटन बल की SI इकाई है।"
+        },
+        hint: "It is named after Isaac Newton."
     },
 
     {
@@ -494,294 +757,27 @@ const questions = [
         answer: 1,
         explanation: {
             en: "Nitrogen makes up about 78% of Earth's atmosphere.",
-            hi: "नाइट्रोजन पृथ्वी के वायुमंडल का लगभग 78% भाग है।"
-        }
+            hi: "नाइट्रोजन पृथ्वी के वायुमंडल का लगभग 78% हिस्सा है।"
+        },
+        hint: "It is more abundant than oxygen."
     },
 
     {
         category: "Science",
         question: {
-            en: "Which vitamin is mainly produced in the skin through sunlight exposure?",
-            hi: "सूर्य के प्रकाश के संपर्क में आने पर त्वचा में मुख्य रूप से कौन सा विटामिन बनता है?"
+            en: "Which vitamin is produced in the skin when exposed to sunlight?",
+            hi: "सूर्य के प्रकाश के संपर्क में आने पर त्वचा में कौन सा विटामिन बनता है?"
         },
-        options: [
-            "Vitamin A",
-            "Vitamin B",
-            "Vitamin C",
-            "Vitamin D"
-        ],
+        options: {
+            en: ["Vitamin A", "Vitamin B12", "Vitamin C", "Vitamin D"],
+            hi: ["विटामिन A", "विटामिन B12", "विटामिन C", "विटामिन D"]
+        },
         answer: 3,
         explanation: {
             en: "Sunlight helps the skin synthesize vitamin D.",
             hi: "सूर्य का प्रकाश त्वचा में विटामिन D के निर्माण में मदद करता है।"
-        }
-    },
-
-    // =========================
-    // ECONOMICS
-    // =========================
-
-    {
-        category: "Economics",
-        question: {
-            en: "What is the full form of GDP?",
-            hi: "GDP का पूरा नाम क्या है?"
         },
-        options: {
-            en: [
-                "Gross Domestic Product",
-                "General Domestic Product",
-                "Gross Development Plan",
-                "General Development Product"
-            ],
-            hi: [
-                "Gross Domestic Product",
-                "General Domestic Product",
-                "Gross Development Plan",
-                "General Development Product"
-            ]
-        },
-        answer: 0,
-        explanation: {
-            en: "GDP stands for Gross Domestic Product.",
-            hi: "GDP का पूरा नाम Gross Domestic Product है।"
-        }
-    },
-
-    {
-        category: "Economics",
-        question: {
-            en: "Which institution issues currency notes in India, except the one-rupee note?",
-            hi: "भारत में एक रुपये के नोट को छोड़कर अधिकांश मुद्रा नोट कौन जारी करता है?"
-        },
-        options: {
-            en: [
-                "State Bank of India",
-                "Reserve Bank of India",
-                "Ministry of Finance",
-                "NITI Aayog"
-            ],
-            hi: [
-                "भारतीय स्टेट बैंक",
-                "भारतीय रिजर्व बैंक",
-                "वित्त मंत्रालय",
-                "नीति आयोग"
-            ]
-        },
-        answer: 1,
-        explanation: {
-            en: "The Reserve Bank of India issues banknotes, while the one-rupee note is issued by the Government of India.",
-            hi: "भारतीय रिजर्व बैंक बैंक नोट जारी करता है, जबकि एक रुपये का नोट भारत सरकार जारी करती है।"
-        }
-    },
-
-    {
-        category: "Economics",
-        question: {
-            en: "In which year was the Reserve Bank of India established?",
-            hi: "भारतीय रिजर्व बैंक की स्थापना किस वर्ष हुई थी?"
-        },
-        options: ["1935", "1947", "1950", "1925"],
-        answer: 0,
-        explanation: {
-            en: "The Reserve Bank of India began operations on 1 April 1935.",
-            hi: "भारतीय रिजर्व बैंक ने 1 अप्रैल 1935 को काम करना शुरू किया था।"
-        }
-    },
-
-    {
-        category: "Economics",
-        question: {
-            en: "What does RBI stand for?",
-            hi: "RBI का पूरा नाम क्या है?"
-        },
-        options: [
-            "Reserve Bank of India",
-            "Regional Bank of India",
-            "Reserve Bureau of India",
-            "Rural Bank of India"
-        ],
-        answer: 0,
-        explanation: {
-            en: "RBI stands for Reserve Bank of India.",
-            hi: "RBI का पूरा नाम Reserve Bank of India है।"
-        }
-    },
-
-    {
-        category: "Economics",
-        question: {
-            en: "Which tax is included in GST?",
-            hi: "GST में निम्न में से कौन सा कर शामिल है?"
-        },
-        options: [
-            "Service Tax",
-            "Income Tax",
-            "Corporate Tax",
-            "Property Tax"
-        ],
-        answer: 0,
-        explanation: {
-            en: "GST subsumed several indirect taxes including Service Tax.",
-            hi: "GST में सर्विस टैक्स सहित कई अप्रत्यक्ष करों को शामिल किया गया।"
-        }
-    },
-
-    // =========================
-    // STATIC QUESTION SET
-    // Additional questions
-    // =========================
-
-    {
-        category: "GK",
-        question: {
-            en: "What is the national sport officially recognized by India?",
-            hi: "भारत का आधिकारिक रूप से मान्यता प्राप्त राष्ट्रीय खेल कौन सा है?"
-        },
-        options: [
-            "Hockey",
-            "Cricket",
-            "Kabaddi",
-            "India has no officially declared national sport"
-        ],
-        answer: 3,
-        explanation: {
-            en: "India does not officially declare any sport as its national sport.",
-            hi: "भारत सरकार ने किसी भी खेल को आधिकारिक राष्ट्रीय खेल घोषित नहीं किया है।"
-        }
-    },
-
-    {
-        category: "GK",
-        question: {
-            en: "Which is the largest planet in the Solar System?",
-            hi: "सौरमंडल का सबसे बड़ा ग्रह कौन सा है?"
-        },
-        options: [
-            "Earth",
-            "Jupiter",
-            "Saturn",
-            "Neptune"
-        ],
-        answer: 1,
-        explanation: {
-            en: "Jupiter is the largest planet in the Solar System.",
-            hi: "बृहस्पति सौरमंडल का सबसे बड़ा ग्रह है।"
-        }
-    },
-
-    {
-        category: "GK",
-        question: {
-            en: "Which is the smallest planet in the Solar System?",
-            hi: "सौरमंडल का सबसे छोटा ग्रह कौन सा है?"
-        },
-        options: [
-            "Mercury",
-            "Mars",
-            "Venus",
-            "Earth"
-        ],
-        answer: 0,
-        explanation: {
-            en: "Mercury is the smallest planet in the Solar System.",
-            hi: "बुध सौरमंडल का सबसे छोटा ग्रह है।"
-        }
-    },
-
-    {
-        category: "History",
-        question: {
-            en: "Who was the first President of India?",
-            hi: "भारत के प्रथम राष्ट्रपति कौन थे?"
-        },
-        options: [
-            "Dr. Rajendra Prasad",
-            "Dr. S. Radhakrishnan",
-            "Jawaharlal Nehru",
-            "Dr. B. R. Ambedkar"
-        ],
-        answer: 0,
-        explanation: {
-            en: "Dr. Rajendra Prasad was the first President of India.",
-            hi: "डॉ. राजेंद्र प्रसाद भारत के प्रथम राष्ट्रपति थे।"
-        }
-    },
-
-    {
-        category: "History",
-        question: {
-            en: "Who was the first Prime Minister of independent India?",
-            hi: "स्वतंत्र भारत के प्रथम प्रधानमंत्री कौन थे?"
-        },
-        options: [
-            "Sardar Patel",
-            "Jawaharlal Nehru",
-            "Rajendra Prasad",
-            "Lal Bahadur Shastri"
-        ],
-        answer: 1,
-        explanation: {
-            en: "Jawaharlal Nehru became the first Prime Minister of independent India.",
-            hi: "जवाहरलाल नेहरू स्वतंत्र भारत के प्रथम प्रधानमंत्री बने।"
-        }
-    },
-
-    {
-        category: "History",
-        question: {
-            en: "In which year did India become independent?",
-            hi: "भारत किस वर्ष स्वतंत्र हुआ?"
-        },
-        options: [
-            "1945",
-            "1946",
-            "1947",
-            "1950"
-        ],
-        answer: 2,
-        explanation: {
-            en: "India became independent on 15 August 1947.",
-            hi: "भारत 15 अगस्त 1947 को स्वतंत्र हुआ।"
-        }
-    },
-
-    {
-        category: "Geography",
-        question: {
-            en: "Which is the largest ocean in the world?",
-            hi: "विश्व का सबसे बड़ा महासागर कौन सा है?"
-        },
-        options: [
-            "Atlantic Ocean",
-            "Indian Ocean",
-            "Pacific Ocean",
-            "Arctic Ocean"
-        ],
-        answer: 2,
-        explanation: {
-            en: "The Pacific Ocean is the largest ocean.",
-            hi: "प्रशांत महासागर विश्व का सबसे बड़ा महासागर है।"
-        }
-    },
-
-    {
-        category: "Geography",
-        question: {
-            en: "Which is the smallest continent?",
-            hi: "सबसे छोटा महाद्वीप कौन सा है?"
-        },
-        options: [
-            "Europe",
-            "Australia",
-            "Antarctica",
-            "South America"
-        ],
-        answer: 1,
-        explanation: {
-            en: "Australia is the smallest continent by area.",
-            hi: "ऑस्ट्रेलिया क्षेत्रफल की दृष्टि से सबसे छोटा महाद्वीप है।"
-        }
+        hint: "It is important for bone health."
     },
 
     {
@@ -790,131 +786,277 @@ const questions = [
             en: "What is the SI unit of electric current?",
             hi: "विद्युत धारा की SI इकाई क्या है?"
         },
-        options: [
-            "Volt",
-            "Watt",
-            "Ampere",
-            "Ohm"
-        ],
+        options: {
+            en: ["Volt", "Ohm", "Ampere", "Watt"],
+            hi: ["वोल्ट", "ओम", "एम्पियर", "वाट"]
+        },
         answer: 2,
         explanation: {
-            en: "The SI unit of electric current is Ampere.",
-            hi: "विद्युत धारा की SI इकाई एम्पियर है।"
-        }
+            en: "Ampere is the SI unit of electric current.",
+            hi: "एम्पियर विद्युत धारा की SI इकाई है।"
+        },
+        hint: "Its symbol is A."
     },
 
     {
         category: "Science",
         question: {
-            en: "What is the speed of light in vacuum approximately?",
-            hi: "निर्वात में प्रकाश की गति लगभग कितनी होती है?"
+            en: "What is the approximate speed of light in vacuum?",
+            hi: "निर्वात में प्रकाश की लगभग चाल कितनी है?"
         },
-        options: [
-            "3 × 10⁸ m/s",
-            "3 × 10⁶ m/s",
-            "3 × 10⁴ m/s",
-            "3 × 10² m/s"
-        ],
+        options: {
+            en: ["3 × 10⁶ m/s", "3 × 10⁷ m/s", "3 × 10⁸ m/s", "3 × 10⁹ m/s"],
+            hi: ["3 × 10⁶ m/s", "3 × 10⁷ m/s", "3 × 10⁸ m/s", "3 × 10⁹ m/s"]
+        },
+        answer: 2,
+        explanation: {
+            en: "The speed of light in vacuum is approximately 3 × 10⁸ m/s.",
+            hi: "निर्वात में प्रकाश की चाल लगभग 3 × 10⁸ m/s होती है।"
+        },
+        hint: "It is about 300,000 kilometres per second."
+    },
+
+    {
+        category: "Science",
+        question: {
+            en: "Which is the smallest planet in the Solar System?",
+            hi: "सौरमंडल का सबसे छोटा ग्रह कौन सा है?"
+        },
+        options: {
+            en: ["Mars", "Mercury", "Venus", "Neptune"],
+            hi: ["मंगल", "बुध", "शुक्र", "नेपच्यून"]
+        },
+        answer: 1,
+        explanation: {
+            en: "Mercury is the smallest planet in the Solar System.",
+            hi: "बुध सौरमंडल का सबसे छोटा ग्रह है।"
+        },
+        hint: "It is also the closest planet to the Sun."
+    },
+
+    {
+        category: "Science",
+        question: {
+            en: "Which blood group is commonly called the universal donor for red blood cells?",
+            hi: "लाल रक्त कोशिकाओं के लिए किस रक्त समूह को सामान्यतः सार्वभौमिक दाता कहा जाता है?"
+        },
+        options: {
+            en: ["A positive", "AB positive", "O negative", "B negative"],
+            hi: ["A पॉजिटिव", "AB पॉजिटिव", "O नेगेटिव", "B नेगेटिव"]
+        },
+        answer: 2,
+        explanation: {
+            en: "O negative red blood cells lack A, B and RhD antigens and are commonly used as universal donor red cells in emergencies.",
+            hi: "O नेगेटिव लाल रक्त कोशिकाओं में A, B और RhD एंटीजन नहीं होते, इसलिए आपातकाल में इन्हें सार्वभौमिक दाता लाल रक्त कोशिकाओं के रूप में उपयोग किया जाता है।"
+        },
+        hint: "Think of the blood group without A, B and RhD antigens."
+    },
+
+
+    // =========================
+    // ECONOMICS
+    // =========================
+
+    {
+        category: "Economics",
+        question: {
+            en: "What does GDP stand for?",
+            hi: "GDP का पूरा नाम क्या है?"
+        },
+        options: {
+            en: [
+                "Gross Domestic Product",
+                "General Domestic Product",
+                "Gross Development Price",
+                "General Development Product"
+            ],
+            hi: [
+                "Gross Domestic Product",
+                "General Domestic Product",
+                "Gross Development Price",
+                "General Development Product"
+            ]
+        },
         answer: 0,
         explanation: {
-            en: "Light travels in vacuum at approximately 3 × 10⁸ metres per second.",
-            hi: "निर्वात में प्रकाश की गति लगभग 3 × 10⁸ मीटर प्रति सेकंड होती है।"
-        }
-    },
-
-    {
-        category: "Science",
-        question: {
-            en: "Which blood group is known as the universal donor for red blood cells?",
-            hi: "लाल रक्त कोशिकाओं के लिए सार्वभौमिक दाता के रूप में कौन सा रक्त समूह जाना जाता है?"
+            en: "GDP stands for Gross Domestic Product.",
+            hi: "GDP का पूरा नाम Gross Domestic Product है।"
         },
-        options: [
-            "AB+",
-            "O−",
-            "A+",
-            "B−"
-        ],
-        answer: 1,
-        explanation: {
-            en: "O negative red blood cells are generally considered the universal donor type.",
-            hi: "O negative लाल रक्त कोशिकाओं को सामान्यतः सार्वभौमिक दाता माना जाता है।"
-        }
-    },
-
-    {
-        category: "Polity",
-        question: {
-            en: "How many houses does the Parliament of India have?",
-            hi: "भारत की संसद के कितने सदन हैं?"
-        },
-        options: [
-            "One",
-            "Two",
-            "Three",
-            "Four"
-        ],
-        answer: 1,
-        explanation: {
-            en: "The Parliament consists of the President and two Houses: Lok Sabha and Rajya Sabha.",
-            hi: "संसद में राष्ट्रपति और दो सदन—लोकसभा तथा राज्यसभा—होते हैं।"
-        }
-    },
-
-    {
-        category: "Polity",
-        question: {
-            en: "What is the upper house of the Indian Parliament called?",
-            hi: "भारतीय संसद के उच्च सदन को क्या कहा जाता है?"
-        },
-        options: [
-            "Lok Sabha",
-            "Rajya Sabha",
-            "Vidhan Sabha",
-            "Vidhan Parishad"
-        ],
-        answer: 1,
-        explanation: {
-            en: "Rajya Sabha is the upper house of Parliament.",
-            hi: "राज्यसभा संसद का उच्च सदन है।"
-        }
+        hint: "It measures the value of final goods and services produced within an economy."
     },
 
     {
         category: "Economics",
         question: {
-            en: "What does inflation generally mean?",
-            hi: "मुद्रास्फीति का सामान्य अर्थ क्या है?"
+            en: "When was the Reserve Bank of India established?",
+            hi: "भारतीय रिजर्व बैंक की स्थापना कब हुई थी?"
         },
-        options: [
-            "Fall in general price level",
-            "Rise in general price level",
-            "Rise in unemployment only",
-            "Fall in population"
-        ],
+        options: {
+            en: ["1930", "1935", "1947", "1950"],
+            hi: ["1930", "1935", "1947", "1950"]
+        },
         answer: 1,
         explanation: {
-            en: "Inflation generally refers to a sustained rise in the general price level.",
-            hi: "मुद्रास्फीति का अर्थ सामान्य मूल्य स्तर में लगातार वृद्धि से है।"
-        }
+            en: "The Reserve Bank of India began operations on 1 April 1935.",
+            hi: "भारतीय रिजर्व बैंक ने 1 अप्रैल 1935 को काम करना शुरू किया।"
+        },
+        hint: "Its establishment was before India's independence."
     },
 
     {
-        category: "GK",
+        category: "Economics",
         question: {
-            en: "What is the full form of ISRO?",
-            hi: "ISRO का पूरा नाम क्या है?"
+            en: "What is the full form of RBI?",
+            hi: "RBI का पूरा नाम क्या है?"
         },
-        options: [
-            "Indian Space Research Organisation",
-            "Indian Science Research Organisation",
-            "International Space Research Organisation",
-            "Indian Satellite Research Office"
-        ],
+        options: {
+            en: [
+                "Reserve Bank of India",
+                "Royal Bank of India",
+                "Regional Bank of India",
+                "Reserve Bureau of India"
+            ],
+            hi: [
+                "Reserve Bank of India",
+                "Royal Bank of India",
+                "Regional Bank of India",
+                "Reserve Bureau of India"
+            ]
+        },
         answer: 0,
         explanation: {
-            en: "ISRO stands for Indian Space Research Organisation.",
-            hi: "ISRO का पूरा नाम Indian Space Research Organisation है।"
-        }
+            en: "RBI stands for Reserve Bank of India.",
+            hi: "RBI का पूरा नाम Reserve Bank of India है।"
+        },
+        hint: "It is India's central bank."
+    },
+
+    {
+        category: "Economics",
+        question: {
+            en: "Which institution is India's central bank?",
+            hi: "भारत का केंद्रीय बैंक कौन सा संस्थान है?"
+        },
+        options: {
+            en: ["SBI", "RBI", "SEBI", "NABARD"],
+            hi: ["SBI", "RBI", "SEBI", "NABARD"]
+        },
+        answer: 1,
+        explanation: {
+            en: "The Reserve Bank of India is India's central bank.",
+            hi: "भारतीय रिजर्व बैंक भारत का केंद्रीय बैंक है।"
+        },
+        hint: "It manages monetary policy."
+    },
+
+    {
+        category: "Economics",
+        question: {
+            en: "Which tax replaced several indirect taxes in India after the GST system was introduced?",
+            hi: "भारत में GST लागू होने के बाद इसने कई अप्रत्यक्ष करों को किस रूप में समाहित किया?"
+        },
+        options: {
+            en: [
+                "Income Tax",
+                "Service Tax and several other indirect taxes",
+                "Corporate Tax",
+                "Property Tax"
+            ],
+            hi: [
+                "आयकर",
+                "सेवा कर और कई अन्य अप्रत्यक्ष कर",
+                "कॉरपोरेट कर",
+                "संपत्ति कर"
+            ]
+        },
+        answer: 1,
+        explanation: {
+            en: "GST subsumed several indirect taxes, including Service Tax.",
+            hi: "GST ने सेवा कर सहित कई अप्रत्यक्ष करों को समाहित किया।"
+        },
+        hint: "GST is a destination-based indirect tax."
+    },
+
+    {
+        category: "Economics",
+        question: {
+            en: "What does GST stand for?",
+            hi: "GST का पूरा नाम क्या है?"
+        },
+        options: {
+            en: [
+                "Goods and Services Tax",
+                "General Sales Tax",
+                "Government Service Tax",
+                "Goods Supply Tax"
+            ],
+            hi: [
+                "Goods and Services Tax",
+                "General Sales Tax",
+                "Government Service Tax",
+                "Goods Supply Tax"
+            ]
+        },
+        answer: 0,
+        explanation: {
+            en: "GST stands for Goods and Services Tax.",
+            hi: "GST का पूरा नाम Goods and Services Tax है।"
+        },
+        hint: "It applies to the supply of goods and services."
+    },
+
+    {
+        category: "Economics",
+        question: {
+            en: "Which organization regulates the securities market in India?",
+            hi: "भारत में प्रतिभूति बाजार को कौन सा संगठन नियंत्रित करता है?"
+        },
+        options: {
+            en: ["RBI", "SEBI", "NITI Aayog", "NABARD"],
+            hi: ["RBI", "SEBI", "नीति आयोग", "NABARD"]
+        },
+        answer: 1,
+        explanation: {
+            en: "SEBI regulates India's securities market.",
+            hi: "SEBI भारत के प्रतिभूति बाजार को नियंत्रित करता है।"
+        },
+        hint: "Its name begins with Securities and Exchange."
+    },
+
+    {
+        category: "Economics",
+        question: {
+            en: "Which institution replaced the Planning Commission of India?",
+            hi: "भारत के योजना आयोग का स्थान किस संस्था ने लिया?"
+        },
+        options: {
+            en: ["Finance Commission", "NITI Aayog", "RBI", "SEBI"],
+            hi: ["वित्त आयोग", "नीति आयोग", "RBI", "SEBI"]
+        },
+        answer: 1,
+        explanation: {
+            en: "NITI Aayog replaced the Planning Commission in 2015.",
+            hi: "नीति आयोग ने 2015 में योजना आयोग का स्थान लिया।"
+        },
+        hint: "Its name begins with National Institution for Transforming India."
+    },
+
+    {
+        category: "Economics",
+        question: {
+            en: "Which sector includes agriculture and fishing?",
+            hi: "कृषि और मछली पालन किस क्षेत्र में आते हैं?"
+        },
+        options: {
+            en: ["Primary sector", "Secondary sector", "Tertiary sector", "Quaternary sector"],
+            hi: ["प्राथमिक क्षेत्र", "द्वितीयक क्षेत्र", "तृतीयक क्षेत्र", "चतुर्थक क्षेत्र"]
+        },
+        answer: 0,
+        explanation: {
+            en: "Agriculture and fishing are activities of the primary sector.",
+            hi: "कृषि और मछली पालन प्राथमिक क्षेत्र की गतिविधियाँ हैं।"
+        },
+        hint: "This sector directly uses natural resources."
     }
 
 ];
