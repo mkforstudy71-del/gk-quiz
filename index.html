@@ -1,1792 +1,1886 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GK & GS Quiz | Competitive Exam Preparation</title>
+    <title>GK & GS Quiz</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
 
-    <nav class="navbar">
+<nav class="navbar">
 
-        <div class="logo">
-            GK<span>QUIZ</span>
+    <div class="logo">
+        GK & GS Quiz
+    </div>
+
+    <div class="nav-right">
+
+        <button id="languageBtn" class="nav-btn">
+            हिंदी
+        </button>
+
+        <button id="themeBtn" class="nav-btn">
+            🌙
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HOME PAGE ================= -->
+
+<section id="homePage" class="home">
+
+    <div class="hero">
+
+        <h1>
+            GK & GS Quiz
+        </h1>
+
+        <p>
+            Test your knowledge with category-wise competitive exam questions.
+        </p>
+
+        <p>
+            50 Questions • 40 Minutes
+        </p>
+
+    </div>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <div class="categories">
+
+        <h2>
+            Select Category
+        </h2>
+
+
+        <button
+            class="category"
+            data-category="All"
+        >
+            <span>🎯</span>
+            <strong>Mixed Quiz</strong>
+            <small>GK + GS</small>
+        </button>
+
+
+        <button
+            class="category"
+            data-category="GK"
+        >
+            <span>🌎</span>
+            <strong>General Knowledge</strong>
+            <small>GK</small>
+        </button>
+
+
+        <button
+            class="category"
+            data-category="Polity"
+        >
+            <span>🇮🇳</span>
+            <strong>Indian Polity</strong>
+            <small>Polity</small>
+        </button>
+
+
+        <button
+            class="category"
+            data-category="History"
+        >
+            <span>🏛️</span>
+            <strong>History</strong>
+            <small>History</small>
+        </button>
+
+
+        <button
+            class="category"
+            data-category="Geography"
+        >
+            <span>🌍</span>
+            <strong>Geography</strong>
+            <small>Geography</small>
+        </button>
+
+
+        <button
+            class="category"
+            data-category="Science"
+        >
+            <span>🔬</span>
+            <strong>Science</strong>
+            <small>Science</small>
+        </button>
+
+
+        <button
+            class="category"
+            data-category="Economics"
+        >
+            <span>📊</span>
+            <strong>Economics</strong>
+            <small>Economics</small>
+        </button>
+
+    </div>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <div class="features">
+
+        <div class="feature-card">
+            <h3>⏱️ 40 Minutes</h3>
+            <p>Complete your 50-question quiz within the time limit.</p>
         </div>
 
-        <div class="nav-right">
-
-            <button id="languageBtn" class="nav-btn">
-                हिन्दी
-            </button>
-
-            <button id="themeBtn" class="nav-btn">
-                🌙
-            </button>
-
+        <div class="feature-card">
+            <h3>📝 50 Questions</h3>
+            <p>Every quiz contains 50 questions.</p>
         </div>
 
-    </nav>
+        <div class="feature-card">
+            <h3>🔖 Mark Review</h3>
+            <p>Mark difficult questions and return to them later.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>💡 Explanation</h3>
+            <p>See explanations after completing the quiz.</p>
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- ================= HOME PAGE ================= -->
 
-    <main id="homePage" class="home">
+<!-- ================= QUIZ PAGE ================= -->
 
-        <section class="hero">
+<section id="quizPage" class="quiz-page">
 
-            <p class="badge">
-                COMPETITIVE EXAM PREPARATION
-            </p>
+    <!-- QUIZ HEADER -->
 
-            <h1 id="heroTitle">
-                Test Your GK & GS Knowledge
-            </h1>
+    <div class="quiz-header">
 
-            <p id="heroDescription">
-                Practice General Knowledge and General Studies
-                with an interactive quiz designed for competitive exams.
-            </p>
+        <div>
 
-            <button id="startBtn" class="start-btn">
-                Start All Quiz →
-            </button>
-
-        </section>
-
-
-        <!-- ================= CATEGORIES ================= -->
-
-        <section class="categories-section">
-
-            <h2 id="categoryTitle" class="section-title">
-                Choose Your Category
+            <h2 id="quizTitle">
+                GK & GS Quiz
             </h2>
 
-            <div class="categories">
+            <p id="quizCategory">
+                Mixed Quiz
+            </p>
 
-                <button class="category active" data-category="All">
-                    <span class="category-icon">📚</span>
-                    <strong>All GK + GS</strong>
-                    <small>50 Questions</small>
-                </button>
-
-                <button class="category" data-category="GK">
-                    <span class="category-icon">🧠</span>
-                    <strong>General Knowledge</strong>
-                    <small>50 Questions</small>
-                </button>
-
-                <button class="category" data-category="Polity">
-                    <span class="category-icon">⚖️</span>
-                    <strong>Indian Polity</strong>
-                    <small>50 Questions</small>
-                </button>
-
-                <button class="category" data-category="History">
-                    <span class="category-icon">🏛️</span>
-                    <strong>History</strong>
-                    <small>50 Questions</small>
-                </button>
-
-                <button class="category" data-category="Geography">
-                    <span class="category-icon">🌍</span>
-                    <strong>Geography</strong>
-                    <small>50 Questions</small>
-                </button>
-
-                <button class="category" data-category="Science">
-                    <span class="category-icon">🔬</span>
-                    <strong>Science</strong>
-                    <small>50 Questions</small>
-                </button>
-
-                <button class="category" data-category="Economics">
-                    <span class="category-icon">💰</span>
-                    <strong>Economics</strong>
-                    <small>50 Questions</small>
-                </button>
-
-            </div>
-
-        </section>
+        </div>
 
 
-        <!-- ================= FEATURES ================= -->
+        <div class="timer-box">
 
-        <section class="features">
-
-            <div class="feature">
-                <span>⏱️</span>
-                <h3>40 Minutes</h3>
-                <p>Complete 50 questions within the given time.</p>
-            </div>
-
-            <div class="feature">
-                <span>➖</span>
-                <h3>Negative Marking</h3>
-                <p>−0.25 marks for every wrong answer.</p>
-            </div>
-
-            <div class="feature">
-                <span>📊</span>
-                <h3>Detailed Result</h3>
-                <p>See score, accuracy and performance.</p>
-            </div>
-
-            <div class="feature">
-                <span>💡</span>
-                <h3>Explanations</h3>
-                <p>Understand the correct answer.</p>
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ================= QUIZ PAGE ================= -->
-
-    <main id="quizPage" class="quiz-page hidden">
-
-        <div class="quiz-header">
-
-            <div>
-
-                <h2 id="quizCategory">
-                    GK & GS Quiz
-                </h2>
-
-                <p>
-                    Question
-                    <span id="currentQuestionNumber">1</span>
-                    of
-                    <span id="totalQuestions">50</span>
-                </p>
-
-            </div>
-
-            <div class="timer">
-
+            <span>
                 ⏱️
-                <span id="timer">
-                    40:00
+            </span>
+
+            <span id="timer">
+                40:00
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= QUIZ LAYOUT ================= -->
+
+    <div class="quiz-layout">
+
+
+        <!-- ================= QUESTION AREA ================= -->
+
+        <div class="question-card">
+
+
+            <!-- QUESTION INFO -->
+
+            <div class="question-info">
+
+                <span id="questionNumber">
+                    Question 1 of 50
+                </span>
+
+                <span id="questionStatus">
+                    Not Answered
                 </span>
 
             </div>
 
-        </div>
 
+            <!-- PROGRESS -->
 
-        <!-- ================= PROGRESS ================= -->
-
-        <div class="progress">
-
-            <div
-                id="progressBar"
-                class="progress-bar">
-            </div>
-
-        </div>
-
-
-        <div class="quiz-layout">
-
-
-            <!-- ================= QUESTION ================= -->
-
-            <section class="question-card">
-
-                <div class="question-info">
-
-                    <span id="questionCategory">
-                        GK
-                    </span>
-
-                    <span id="questionStatus">
-                        Not Answered
-                    </span>
-
-                </div>
-
-
-                <h2 id="question">
-                    Question will appear here
-                </h2>
-
-
-                <!-- OPTIONS -->
-
-                <div id="options" class="options">
-                </div>
-
-
-                <!-- HINT -->
-
-                <button
-                    id="hintBtn"
-                    class="control-btn">
-                    💡 Show Hint
-                </button>
-
-                <p
-                    id="hintText"
-                    class="hint-text hidden">
-                </p>
-
-
-                <!-- CONTROLS -->
-
-                <div class="controls">
-
-                    <button
-                        id="previousBtn"
-                        class="control-btn prev">
-                        ← Previous
-                    </button>
-
-                    <button
-                        id="clearBtn"
-                        class="control-btn clear">
-                        Clear
-                    </button>
-
-                    <button
-                        id="markBtn"
-                        class="control-btn mark">
-                        ⭐ Mark
-                    </button>
-
-                    <button
-                        id="nextBtn"
-                        class="control-btn next">
-                        Next →
-                    </button>
-
-                </div>
-
-            </section>
-
-
-            <!-- ================= PALETTE ================= -->
-
-            <aside class="palette-card">
-
-                <h3>
-                    Question Palette
-                </h3>
+            <div class="progress">
 
                 <div
-                    id="palette"
-                    class="palette">
-                </div>
+                    id="progressBar"
+                    class="progress-bar"
+                    style="width: 2%;"
+                ></div>
+
+            </div>
+
+
+            <!-- QUESTION -->
+
+            <div
+                id="question"
+                class="question"
+            >
+                Question will appear here.
+            </div>
+
+
+            <!-- OPTIONS -->
+
+            <div
+                id="options"
+                class="options"
+            >
+                <!-- Options generated by JavaScript -->
+            </div>
+
+
+            <!-- HINT -->
+
+            <div
+                id="hintBox"
+                class="hint"
+                style="display:none;"
+            >
+
+                <strong>
+                    💡 Hint:
+                </strong>
+
+                <span id="hintText"></span>
+
+            </div>
+
+
+            <!-- CONTROLS -->
+
+            <div class="controls">
+
+                <button
+                    id="previousBtn"
+                    class="control-btn prev"
+                >
+                    ← Previous
+                </button>
 
 
                 <button
-                    id="submitBtn"
-                    class="submit">
-                    Submit Quiz
+                    id="clearBtn"
+                    class="control-btn clear"
+                >
+                    Clear
                 </button>
 
-            </aside>
+
+                <button
+                    id="markBtn"
+                    class="control-btn mark"
+                >
+                    🔖 Mark
+                </button>
+
+
+                <button
+                    id="nextBtn"
+                    class="control-btn next"
+                >
+                    Next →
+                </button>
+
+            </div>
 
         </div>
 
-    </main>
 
 
-    <!-- ================= RESULT PAGE ================= -->
+        <!-- ================= QUESTION PALETTE ================= -->
 
-    <main id="resultPage" class="result-page hidden">
+        <aside class="palette-card">
 
-        <div class="result-card">
-
-            <p>
-                QUIZ COMPLETED
-            </p>
-
-            <h1 id="resultTitle">
-                Your Result
-            </h1>
+            <h3>
+                Question Palette
+            </h3>
 
 
-            <div class="big-score">
-
-                <span id="score">
-                    0
-                </span>
-
-                <small>
-                    /
-                    <span id="resultTotal">
-                        50
-                    </span>
-                </small>
-
+            <div
+                id="palette"
+                class="palette"
+            >
+                <!-- Question numbers generated by JS -->
             </div>
 
 
-            <p id="resultMessage">
-                Keep practicing!
-            </p>
+            <div class="palette-info">
 
-
-            <!-- STATISTICS -->
-
-            <div class="stats">
-
-                <div class="stat">
-
-                    <span>✅</span>
-
-                    <strong id="correct">
-                        0
-                    </strong>
-
-                    <small>
-                        Correct
-                    </small>
-
+                <div>
+                    <span class="palette-box answered-box"></span>
+                    Answered
                 </div>
 
-
-                <div class="stat">
-
-                    <span>❌</span>
-
-                    <strong id="wrong">
-                        0
-                    </strong>
-
-                    <small>
-                        Wrong
-                    </small>
-
+                <div>
+                    <span class="palette-box marked-box"></span>
+                    Marked
                 </div>
 
-
-                <div class="stat">
-
-                    <span>⭕</span>
-
-                    <strong id="unattempted">
-                        0
-                    </strong>
-
-                    <small>
-                        Unattempted
-                    </small>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <span>📈</span>
-
-                    <strong id="accuracy">
-                        0%
-                    </strong>
-
-                    <small>
-                        Accuracy
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <!-- ANSWER REVIEW -->
-
-            <div class="review">
-
-                <h2>
-                    Answer Review
-                </h2>
-
-                <div id="reviewContainer">
+                <div>
+                    <span class="palette-box"></span>
+                    Not Answered
                 </div>
 
             </div>
 
 
             <button
+                id="submitBtn"
+                class="submit"
+            >
+                Submit Quiz
+            </button>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= RESULT PAGE ================= -->
+
+<section
+    id="resultPage"
+    class="result-page"
+>
+
+    <div class="result-card">
+
+
+        <h1>
+            🎉 Quiz Completed!
+        </h1>
+
+
+        <p id="resultCategory">
+            Mixed Quiz
+        </p>
+
+
+        <!-- SCORE -->
+
+        <div class="big-score">
+
+            <span id="finalScore">
+                0
+            </span>
+
+            <small>
+                / 50
+            </small>
+
+        </div>
+
+
+        <p>
+            Your Score
+        </p>
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+
+            <div class="stat">
+
+                <span
+                    id="correctAnswers"
+                >
+                    0
+                </span>
+
+                <small>
+                    Correct
+                </small>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span
+                    id="wrongAnswers"
+                >
+                    0
+                </span>
+
+                <small>
+                    Wrong
+                </small>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span
+                    id="unattemptedAnswers"
+                >
+                    0
+                </span>
+
+                <small>
+                    Unattempted
+                </small>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span
+                    id="accuracy"
+                >
+                    0%
+                </span>
+
+                <small>
+                    Accuracy
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- REVIEW -->
+
+        <div
+            id="reviewContainer"
+            class="review-container"
+        >
+            <!-- Review generated by JavaScript -->
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="result-buttons">
+
+            <button
                 id="restartBtn"
-                class="restart">
+                class="restart"
+            >
                 🔄 Restart Quiz
             </button>
 
 
             <button
                 id="homeBtn"
-                class="restart">
-                🏠 Back to Home
+                class="restart"
+            >
+                🏠 Home
             </button>
 
         </div>
 
-    </main>
+    </div>
+
+</section>
 
 
-    <!-- ================= QUESTIONS FILE ================= -->
 
-    <script src="questions.js"></script>
+<!-- ================= JAVASCRIPT ================= -->
 
-
-    <!-- ================= JAVASCRIPT ================= -->
-
-    <script>
-
-        /* ==========================================
-           QUIZ SETTINGS
-        ========================================== */
-
-        const QUESTIONS_PER_QUIZ = 50;
-
-        const CORRECT_MARKS = 1;
-
-        const NEGATIVE_MARKS = 0.25;
-
-        const TOTAL_TIME = 40 * 60;
+<script src="questions.js"></script>
 
 
-        /* ==========================================
-           VARIABLES
-        ========================================== */
+<script>
 
-        let selectedCategory = "All";
-
-        let selectedLanguage = "en";
-
-        let quizQuestions = [];
-
-        let currentQuestion = 0;
-
-        let userAnswers = [];
-
-        let markedQuestions = [];
-
-        let timeLeft = TOTAL_TIME;
-
-        let timerInterval;
+"use strict";
 
 
-        /* ==========================================
-           ELEMENTS
-        ========================================== */
+// =====================================================
+// SETTINGS
+// =====================================================
 
-        const homePage =
-            document.getElementById("homePage");
+const QUESTIONS_PER_QUIZ = 50;
 
-        const quizPage =
-            document.getElementById("quizPage");
-
-        const resultPage =
-            document.getElementById("resultPage");
-
-        const startBtn =
-            document.getElementById("startBtn");
-
-        const restartBtn =
-            document.getElementById("restartBtn");
-
-        const homeBtn =
-            document.getElementById("homeBtn");
-
-        const nextBtn =
-            document.getElementById("nextBtn");
-
-        const previousBtn =
-            document.getElementById("previousBtn");
-
-        const clearBtn =
-            document.getElementById("clearBtn");
-
-        const markBtn =
-            document.getElementById("markBtn");
-
-        const submitBtn =
-            document.getElementById("submitBtn");
-
-        const hintBtn =
-            document.getElementById("hintBtn");
-
-        const themeBtn =
-            document.getElementById("themeBtn");
-
-        const languageBtn =
-            document.getElementById("languageBtn");
+const QUIZ_TIME = 40 * 60;
 
 
-        /* ==========================================
-           CATEGORY CLICK
-        ========================================== */
+// =====================================================
+// VARIABLES
+// =====================================================
 
-        document
-            .querySelectorAll(".category")
-            .forEach(button => {
+let selectedCategory = "All";
 
-                button.addEventListener("click", () => {
+let quizQuestions = [];
 
-                    document
-                        .querySelectorAll(".category")
-                        .forEach(btn => {
-                            btn.classList.remove("active");
-                        });
+let currentQuestion = 0;
 
-                    button.classList.add("active");
+let answers = [];
 
-                    selectedCategory =
-                        button.dataset.category;
+let marked = [];
 
-                    startQuiz();
+let timeLeft = QUIZ_TIME;
 
-                });
+let timerInterval = null;
 
-            });
+let language = "en";
 
 
-        /* ==========================================
-           START ALL QUIZ
-        ========================================== */
+// =====================================================
+// GET ELEMENTS
+// =====================================================
 
-        startBtn.addEventListener(
+const homePage =
+    document.getElementById("homePage");
+
+const quizPage =
+    document.getElementById("quizPage");
+
+const resultPage =
+    document.getElementById("resultPage");
+
+const quizTitle =
+    document.getElementById("quizTitle");
+
+const quizCategory =
+    document.getElementById("quizCategory");
+
+const timer =
+    document.getElementById("timer");
+
+const questionNumber =
+    document.getElementById("questionNumber");
+
+const questionStatus =
+    document.getElementById("questionStatus");
+
+const progressBar =
+    document.getElementById("progressBar");
+
+const question =
+    document.getElementById("question");
+
+const options =
+    document.getElementById("options");
+
+const palette =
+    document.getElementById("palette");
+
+const previousBtn =
+    document.getElementById("previousBtn");
+
+const nextBtn =
+    document.getElementById("nextBtn");
+
+const clearBtn =
+    document.getElementById("clearBtn");
+
+const markBtn =
+    document.getElementById("markBtn");
+
+const submitBtn =
+    document.getElementById("submitBtn");
+
+const languageBtn =
+    document.getElementById("languageBtn");
+
+const themeBtn =
+    document.getElementById("themeBtn");
+
+const restartBtn =
+    document.getElementById("restartBtn");
+
+const homeBtn =
+    document.getElementById("homeBtn");
+
+const hintBox =
+    document.getElementById("hintBox");
+
+const hintText =
+    document.getElementById("hintText");
+
+
+// =====================================================
+// SHUFFLE FUNCTION
+// =====================================================
+
+function shuffle(array) {
+
+    const arr = [...array];
+
+    for (
+        let i = arr.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        const j =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+        [
+            arr[i],
+            arr[j]
+        ] =
+        [
+            arr[j],
+            arr[i]
+        ];
+    }
+
+    return arr;
+}
+
+
+// =====================================================
+// START QUIZ
+// =====================================================
+
+function startQuiz(category = "All") {
+
+    selectedCategory = category;
+
+
+    // Check questions.js
+
+    if (
+        typeof questions === "undefined" ||
+        !Array.isArray(questions)
+    ) {
+
+        alert(
+            "questions.js load nahi hua."
+        );
+
+        return;
+    }
+
+
+    // Filter category
+
+    let pool;
+
+
+    if (category === "All") {
+
+        pool = questions;
+
+    } else {
+
+        pool =
+            questions.filter(
+                q => q.category === category
+            );
+
+    }
+
+
+    // Need 50 questions
+
+    if (
+        pool.length < QUESTIONS_PER_QUIZ
+    ) {
+
+        alert(
+            category +
+            " category me sirf " +
+            pool.length +
+            " questions available hain. 50 questions required hain."
+        );
+
+        return;
+    }
+
+
+    // Select 50 random questions
+
+    quizQuestions =
+        shuffle(pool).slice(
+            0,
+            QUESTIONS_PER_QUIZ
+        );
+
+
+    // Reset
+
+    currentQuestion = 0;
+
+    answers =
+        Array(
+            quizQuestions.length
+        ).fill(null);
+
+    marked =
+        Array(
+            quizQuestions.length
+        ).fill(false);
+
+
+    // Reset timer
+
+    timeLeft = QUIZ_TIME;
+
+
+    // Update title
+
+    if (category === "All") {
+
+        quizTitle.textContent =
+            "Mixed GK & GS Quiz";
+
+        quizCategory.textContent =
+            "General Knowledge + General Studies";
+
+    } else {
+
+        quizTitle.textContent =
+            category + " Quiz";
+
+        quizCategory.textContent =
+            category;
+
+    }
+
+
+    // Show quiz
+
+    homePage.style.display = "none";
+
+    resultPage.style.display = "none";
+
+    quizPage.style.display = "block";
+
+
+    // Render
+
+    createPalette();
+
+    showQuestion();
+
+    startTimer();
+
+}
+
+
+// =====================================================
+// SHOW QUESTION
+// =====================================================
+
+function showQuestion() {
+
+    const q =
+        quizQuestions[currentQuestion];
+
+
+    // Question number
+
+    questionNumber.textContent =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        quizQuestions.length;
+
+
+    // Progress
+
+    const progress =
+        (
+            (currentQuestion + 1) /
+            quizQuestions.length
+        ) * 100;
+
+    progressBar.style.width =
+        progress + "%";
+
+
+    // Question text
+
+    if (
+        typeof q.question === "object"
+    ) {
+
+        question.textContent =
+            q.question[language] ||
+            q.question.en;
+
+    } else {
+
+        question.textContent =
+            q.question;
+
+    }
+
+
+    // Options
+
+    options.innerHTML = "";
+
+
+    q.options.forEach(
+        (option, index) => {
+
+            const button =
+                document.createElement("button");
+
+            button.className =
+                "option";
+
+
+            // Support bilingual option
+
+            if (
+                typeof option === "object"
+            ) {
+
+                button.textContent =
+                    option[language] ||
+                    option.en;
+
+            } else {
+
+                button.textContent =
+                    option;
+
+            }
+
+
+            // Selected answer
+
+            if (
+                answers[currentQuestion] === index
+            ) {
+
+                button.classList.add(
+                    "selected"
+                );
+
+            }
+
+
+            button.addEventListener(
+                "click",
+                () => selectAnswer(index)
+            );
+
+
+            options.appendChild(button);
+
+        }
+    );
+
+
+    // Status
+
+    if (
+        answers[currentQuestion] !== null
+    ) {
+
+        questionStatus.textContent =
+            "Answered";
+
+    } else {
+
+        questionStatus.textContent =
+            "Not Answered";
+
+    }
+
+
+    // Mark button
+
+    if (
+        marked[currentQuestion]
+    ) {
+
+        markBtn.textContent =
+            "🔖 Marked";
+
+    } else {
+
+        markBtn.textContent =
+            "🔖 Mark";
+
+    }
+
+
+    // Hint
+
+    if (q.hint) {
+
+        hintBox.style.display =
+            "block";
+
+        if (
+            typeof q.hint === "object"
+        ) {
+
+            hintText.textContent =
+                q.hint[language] ||
+                q.hint.en;
+
+        } else {
+
+            hintText.textContent =
+                q.hint;
+
+        }
+
+    } else {
+
+        hintBox.style.display =
+            "none";
+
+    }
+
+
+    // Previous button
+
+    previousBtn.disabled =
+        currentQuestion === 0;
+
+
+    // Next button
+
+    if (
+        currentQuestion ===
+        quizQuestions.length - 1
+    ) {
+
+        nextBtn.textContent =
+            "Finish →";
+
+    } else {
+
+        nextBtn.textContent =
+            "Next →";
+
+    }
+
+
+    updatePalette();
+
+}
+
+
+// =====================================================
+// SELECT ANSWER
+// =====================================================
+
+function selectAnswer(index) {
+
+    answers[currentQuestion] =
+        index;
+
+    showQuestion();
+
+}
+
+
+// =====================================================
+// CLEAR ANSWER
+// =====================================================
+
+function clearAnswer() {
+
+    answers[currentQuestion] =
+        null;
+
+    showQuestion();
+
+}
+
+
+// =====================================================
+// MARK QUESTION
+// =====================================================
+
+function toggleMark() {
+
+    marked[currentQuestion] =
+        !marked[currentQuestion];
+
+    showQuestion();
+
+}
+
+
+// =====================================================
+// NEXT QUESTION
+// =====================================================
+
+function nextQuestion() {
+
+    if (
+        currentQuestion <
+        quizQuestions.length - 1
+    ) {
+
+        currentQuestion++;
+
+        showQuestion();
+
+    } else {
+
+        submitQuiz();
+
+    }
+
+}
+
+
+// =====================================================
+// PREVIOUS QUESTION
+// =====================================================
+
+function previousQuestion() {
+
+    if (
+        currentQuestion > 0
+    ) {
+
+        currentQuestion--;
+
+        showQuestion();
+
+    }
+
+}
+
+
+// =====================================================
+// CREATE PALETTE
+// =====================================================
+
+function createPalette() {
+
+    palette.innerHTML = "";
+
+
+    for (
+        let i = 0;
+        i < quizQuestions.length;
+        i++
+    ) {
+
+        const button =
+            document.createElement("button");
+
+
+        button.className =
+            "q-number";
+
+
+        button.textContent =
+            i + 1;
+
+
+        button.addEventListener(
             "click",
             () => {
 
-                selectedCategory = "All";
+                currentQuestion = i;
 
-                document
-                    .querySelectorAll(".category")
-                    .forEach(btn => {
-                        btn.classList.remove("active");
-                    });
-
-                document
-                    .querySelector('[data-category="All"]')
-                    .classList.add("active");
-
-                startQuiz();
+                showQuestion();
 
             }
         );
 
 
-        /* ==========================================
-           START QUIZ
-        ========================================== */
+        palette.appendChild(button);
 
-        function startQuiz() {
+    }
 
-            let availableQuestions;
+}
 
 
-            if (selectedCategory === "All") {
+// =====================================================
+// UPDATE PALETTE
+// =====================================================
 
-                availableQuestions =
-                    [...questions];
+function updatePalette() {
 
-            } else {
+    const buttons =
+        palette.querySelectorAll(
+            ".q-number"
+        );
 
-                availableQuestions =
-                    questions.filter(
-                        q =>
-                            q.category ===
-                            selectedCategory
-                    );
+
+    buttons.forEach(
+        (button, index) => {
+
+            button.classList.remove(
+                "answered"
+            );
+
+            button.classList.remove(
+                "marked"
+            );
+
+
+            if (
+                answers[index] !== null
+            ) {
+
+                button.classList.add(
+                    "answered"
+                );
 
             }
 
 
-            /* ======================================
-               REQUIRE 50 QUESTIONS
-            ====================================== */
-
             if (
-                availableQuestions.length <
-                QUESTIONS_PER_QUIZ
+                marked[index]
             ) {
 
-                alert(
-                    selectedCategory +
-                    " category has only " +
-                    availableQuestions.length +
-                    " questions right now.\n\n" +
-                    "50 questions are required for this quiz."
+                button.classList.add(
+                    "marked"
                 );
+
+            }
+
+
+            if (
+                index === currentQuestion
+            ) {
+
+                button.classList.add(
+                    "current"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+// =====================================================
+// TIMER
+// =====================================================
+
+function startTimer() {
+
+    clearInterval(timerInterval);
+
+
+    updateTimer();
+
+
+    timerInterval =
+        setInterval(
+            () => {
+
+                timeLeft--;
+
+                updateTimer();
+
+
+                if (
+                    timeLeft <= 0
+                ) {
+
+                    clearInterval(
+                        timerInterval
+                    );
+
+                    submitQuiz(true);
+
+                }
+
+            },
+            1000
+        );
+
+}
+
+
+// =====================================================
+// UPDATE TIMER
+// =====================================================
+
+function updateTimer() {
+
+    const minutes =
+        Math.floor(
+            timeLeft / 60
+        );
+
+
+    const seconds =
+        timeLeft % 60;
+
+
+    timer.textContent =
+        String(minutes).padStart(2, "0") +
+        ":" +
+        String(seconds).padStart(2, "0");
+
+}
+
+
+// =====================================================
+// SUBMIT QUIZ
+// =====================================================
+
+function submitQuiz(autoSubmit = false) {
+
+    clearInterval(timerInterval);
+
+
+    if (!autoSubmit) {
+
+        const unanswered =
+            answers.filter(
+                answer => answer === null
+            ).length;
+
+
+        if (
+            unanswered > 0
+        ) {
+
+            const confirmSubmit =
+                confirm(
+                    unanswered +
+                    " questions are unanswered.\n\nDo you want to submit the quiz?"
+                );
+
+
+            if (!confirmSubmit) {
+
+                startTimer();
 
                 return;
 
             }
 
-
-            /* Shuffle */
-
-            availableQuestions =
-                shuffle(
-                    availableQuestions
-                );
-
-
-            /* Select 50 */
-
-            quizQuestions =
-                availableQuestions.slice(
-                    0,
-                    QUESTIONS_PER_QUIZ
-                );
-
-
-            /* Reset */
-
-            currentQuestion = 0;
-
-            userAnswers =
-                new Array(
-                    quizQuestions.length
-                ).fill(null);
-
-            markedQuestions =
-                new Array(
-                    quizQuestions.length
-                ).fill(false);
-
-
-            /* Reset Timer */
-
-            timeLeft = TOTAL_TIME;
-
-            clearInterval(
-                timerInterval
-            );
-
-
-            /* Page Change */
-
-            homePage.classList.add(
-                "hidden"
-            );
-
-            resultPage.classList.add(
-                "hidden"
-            );
-
-            quizPage.classList.remove(
-                "hidden"
-            );
-
-
-            /* Header */
-
-            document.getElementById(
-                "totalQuestions"
-            ).textContent =
-                quizQuestions.length;
-
-
-            document.getElementById(
-                "resultTotal"
-            ).textContent =
-                quizQuestions.length;
-
-
-            document.getElementById(
-                "quizCategory"
-            ).textContent =
-                selectedCategory === "All"
-                    ? "GK & GS Quiz"
-                    : selectedCategory +
-                      " Quiz";
-
-
-            /* Timer */
-
-            updateTimer();
-
-
-            /* Question */
-
-            showQuestion();
-
-
-            /* Palette */
-
-            createPalette();
-
-
-            /* Start Timer */
-
-            startTimer();
-
         }
 
-
-        /* ==========================================
-           SHUFFLE
-        ========================================== */
-
-        function shuffle(array) {
-
-            const newArray =
-                [...array];
-
-            for (
-                let i = newArray.length - 1;
-                i > 0;
-                i--
-            ) {
-
-                const j =
-                    Math.floor(
-                        Math.random() *
-                        (i + 1)
-                    );
-
-                [
-                    newArray[i],
-                    newArray[j]
-                ] =
-                [
-                    newArray[j],
-                    newArray[i]
-                ];
-
-            }
-
-            return newArray;
-
-        }
+    }
 
 
-        /* ==========================================
-           SHOW QUESTION
-        ========================================== */
+    calculateResult();
 
-        function showQuestion() {
-
-            const q =
-                quizQuestions[
-                    currentQuestion
-                ];
+}
 
 
-            document.getElementById(
-                "currentQuestionNumber"
-            ).textContent =
-                currentQuestion + 1;
+// =====================================================
+// CALCULATE RESULT
+// =====================================================
+
+function calculateResult() {
+
+    let correct = 0;
+
+    let wrong = 0;
+
+    let unattempted = 0;
+
+    let score = 0;
 
 
-            document.getElementById(
-                "questionCategory"
-            ).textContent =
-                q.category;
+    quizQuestions.forEach(
+        (q, index) => {
 
-
-            document.getElementById(
-                "question"
-            ).textContent =
-                q.question[
-                    selectedLanguage
-                ];
-
-
-            /* Progress */
-
-            const progress =
-                (
-                    (currentQuestion + 1) /
-                    quizQuestions.length
-                ) * 100;
-
-
-            document.getElementById(
-                "progressBar"
-            ).style.width =
-                progress + "%";
-
-
-            /* Options */
-
-            const optionsContainer =
-                document.getElementById(
-                    "options"
-                );
-
-
-            optionsContainer.innerHTML =
-                "";
-
-
-            let options =
-                q.options;
+            const userAnswer =
+                answers[index];
 
 
             if (
-                !Array.isArray(options)
+                userAnswer === null
             ) {
 
-                options =
-                    options[
-                        selectedLanguage
-                    ];
+                unattempted++;
 
             }
 
-
-            options.forEach(
-                (option, index) => {
-
-                    const button =
-                        document.createElement(
-                            "button"
-                        );
-
-
-                    button.className =
-                        "option";
-
-
-                    if (
-                        userAnswers[
-                            currentQuestion
-                        ] === index
-                    ) {
-
-                        button.classList.add(
-                            "selected"
-                        );
-
-                    }
-
-
-                    button.innerHTML =
-                        `
-                        <span class="option-letter">
-                            ${String.fromCharCode(
-                                65 + index
-                            )}
-                        </span>
-
-                        <span>
-                            ${option}
-                        </span>
-                        `;
-
-
-                    button.addEventListener(
-                        "click",
-                        () => {
-                            selectAnswer(index);
-                        }
-                    );
-
-
-                    optionsContainer.appendChild(
-                        button
-                    );
-
-                }
-            );
-
-
-            /* Status */
-
-            const status =
-                document.getElementById(
-                    "questionStatus"
-                );
-
-
-            if (
-                userAnswers[
-                    currentQuestion
-                ] !== null
+            else if (
+                userAnswer === q.answer
             ) {
 
-                status.textContent =
-                    "Answered";
+                correct++;
 
-            } else {
-
-                status.textContent =
-                    "Not Answered";
+                score += 1;
 
             }
 
+            else {
 
-            /* Mark */
+                wrong++;
 
-            markBtn.textContent =
-                markedQuestions[
-                    currentQuestion
-                ]
-                    ? "⭐ Unmark"
-                    : "⭐ Mark";
+                score -= 0.25;
 
-
-            /* Hint */
-
-            const hintText =
-                document.getElementById(
-                    "hintText"
-                );
-
-
-            hintText.classList.add(
-                "hidden"
-            );
-
-
-            hintText.textContent =
-                q.hint ||
-                "Read the question carefully and compare all options.";
-
-
-            updatePalette();
-
-            updateNavigation();
+            }
 
         }
+    );
 
 
-        /* ==========================================
-           SELECT ANSWER
-        ========================================== */
+    // Prevent negative display
 
-        function selectAnswer(index) {
+    if (score < 0) {
 
-            userAnswers[
-                currentQuestion
-            ] = index;
+        score = Math.max(
+            0,
+            score
+        );
 
-            showQuestion();
-
-        }
+    }
 
 
-        /* ==========================================
-           NEXT
-        ========================================== */
+    // Accuracy
 
-        nextBtn.addEventListener(
-            "click",
-            () => {
+    const attempted =
+        correct + wrong;
 
-                if (
-                    currentQuestion <
-                    quizQuestions.length - 1
-                ) {
 
-                    currentQuestion++;
+    let accuracy = 0;
 
-                    showQuestion();
 
-                }
+    if (attempted > 0) {
 
-            }
+        accuracy =
+            (
+                correct / attempted
+            ) * 100;
+
+    }
+
+
+    showResult(
+        score,
+        correct,
+        wrong,
+        unattempted,
+        accuracy
+    );
+
+}
+
+
+// =====================================================
+// SHOW RESULT
+// =====================================================
+
+function showResult(
+    score,
+    correct,
+    wrong,
+    unattempted,
+    accuracy
+) {
+
+    quizPage.style.display =
+        "none";
+
+    homePage.style.display =
+        "none";
+
+    resultPage.style.display =
+        "block";
+
+
+    document.getElementById(
+        "finalScore"
+    ).textContent =
+        score.toFixed(2);
+
+
+    document.querySelector(
+        ".big-score small"
+    ).textContent =
+        "/ " +
+        quizQuestions.length;
+
+
+    document.getElementById(
+        "correctAnswers"
+    ).textContent =
+        correct;
+
+
+    document.getElementById(
+        "wrongAnswers"
+    ).textContent =
+        wrong;
+
+
+    document.getElementById(
+        "unattemptedAnswers"
+    ).textContent =
+        unattempted;
+
+
+    document.getElementById(
+        "accuracy"
+    ).textContent =
+        accuracy.toFixed(1) +
+        "%";
+
+
+    document.getElementById(
+        "resultCategory"
+    ).textContent =
+        selectedCategory === "All"
+            ? "Mixed GK & GS Quiz"
+            : selectedCategory + " Quiz";
+
+
+    createReview();
+
+}
+
+
+// =====================================================
+// REVIEW
+// =====================================================
+
+function createReview() {
+
+    const container =
+        document.getElementById(
+            "reviewContainer"
         );
 
 
-        /* ==========================================
-           PREVIOUS
-        ========================================== */
-
-        previousBtn.addEventListener(
-            "click",
-            () => {
-
-                if (
-                    currentQuestion > 0
-                ) {
-
-                    currentQuestion--;
-
-                    showQuestion();
-
-                }
-
-            }
-        );
+    container.innerHTML = "";
 
 
-        /* ==========================================
-           CLEAR
-        ========================================== */
+    quizQuestions.forEach(
+        (q, index) => {
 
-        clearBtn.addEventListener(
-            "click",
-            () => {
-
-                userAnswers[
-                    currentQuestion
-                ] = null;
-
-                showQuestion();
-
-            }
-        );
+            const div =
+                document.createElement("div");
 
 
-        /* ==========================================
-           MARK
-        ========================================== */
-
-        markBtn.addEventListener(
-            "click",
-            () => {
-
-                markedQuestions[
-                    currentQuestion
-                ] =
-                    !markedQuestions[
-                        currentQuestion
-                    ];
-
-                showQuestion();
-
-            }
-        );
+            div.className =
+                "review-question";
 
 
-        /* ==========================================
-           HINT
-        ========================================== */
-
-        hintBtn.addEventListener(
-            "click",
-            () => {
-
-                document
-                    .getElementById(
-                        "hintText"
+            const questionText =
+                typeof q.question === "object"
+                    ? (
+                        q.question[language] ||
+                        q.question.en
                     )
-                    .classList.toggle(
-                        "hidden"
+                    : q.question;
+
+
+            let userText =
+                "Not Attempted";
+
+
+            let correctText =
+                getOptionText(
+                    q,
+                    q.answer
+                );
+
+
+            if (
+                answers[index] !== null
+            ) {
+
+                userText =
+                    getOptionText(
+                        q,
+                        answers[index]
                     );
 
             }
-        );
 
 
-        /* ==========================================
-           PALETTE
-        ========================================== */
-
-        function createPalette() {
-
-            const palette =
-                document.getElementById(
-                    "palette"
-                );
+            let resultText;
 
 
-            palette.innerHTML =
+            if (
+                answers[index] === null
+            ) {
+
+                resultText =
+                    "Not Attempted";
+
+            }
+
+            else if (
+                answers[index] === q.answer
+            ) {
+
+                resultText =
+                    "Correct";
+
+            }
+
+            else {
+
+                resultText =
+                    "Wrong";
+
+            }
+
+
+            let explanation =
                 "";
 
 
-            quizQuestions.forEach(
-                (_, index) => {
-
-                    const button =
-                        document.createElement(
-                            "button"
-                        );
-
-
-                    button.className =
-                        "q-number";
-
-
-                    button.textContent =
-                        index + 1;
-
-
-                    button.addEventListener(
-                        "click",
-                        () => {
-
-                            currentQuestion =
-                                index;
-
-                            showQuestion();
-
-                        }
-                    );
-
-
-                    palette.appendChild(
-                        button
-                    );
-
-                }
-            );
-
-        }
-
-
-        function updatePalette() {
-
-            const buttons =
-                document.querySelectorAll(
-                    ".q-number"
-                );
-
-
-            buttons.forEach(
-                (button, index) => {
-
-                    button.classList.remove(
-                        "current",
-                        "answered",
-                        "marked"
-                    );
-
-
-                    if (
-                        index ===
-                        currentQuestion
-                    ) {
-
-                        button.classList.add(
-                            "current"
-                        );
-
-                    }
-
-
-                    if (
-                        userAnswers[index] !==
-                        null
-                    ) {
-
-                        button.classList.add(
-                            "answered"
-                        );
-
-                    }
-
-
-                    if (
-                        markedQuestions[index]
-                    ) {
-
-                        button.classList.add(
-                            "marked"
-                        );
-
-                    }
-
-                }
-            );
-
-        }
-
-
-        /* ==========================================
-           NAVIGATION
-        ========================================== */
-
-        function updateNavigation() {
-
-            previousBtn.disabled =
-                currentQuestion === 0;
-
-
-            nextBtn.disabled =
-                currentQuestion ===
-                quizQuestions.length - 1;
-
-        }
-
-
-        /* ==========================================
-           TIMER
-        ========================================== */
-
-        function startTimer() {
-
-            clearInterval(
-                timerInterval
-            );
-
-
-            timerInterval =
-                setInterval(
-                    () => {
-
-                        timeLeft--;
-
-                        updateTimer();
-
-
-                        if (
-                            timeLeft <= 0
-                        ) {
-
-                            clearInterval(
-                                timerInterval
-                            );
-
-                            alert(
-                                "Time is over!"
-                            );
-
-                            finishQuiz();
-
-                        }
-
-                    },
-                    1000
-                );
-
-        }
-
-
-        function updateTimer() {
-
-            const minutes =
-                Math.floor(
-                    timeLeft / 60
-                );
-
-
-            const seconds =
-                timeLeft % 60;
-
-
-            document.getElementById(
-                "timer"
-            ).textContent =
-                String(
-                    minutes
-                ).padStart(2, "0")
-                +
-                ":"
-                +
-                String(
-                    seconds
-                ).padStart(2, "0");
-
-        }
-
-
-        /* ==========================================
-           SUBMIT
-        ========================================== */
-
-        submitBtn.addEventListener(
-            "click",
-            () => {
-
-                const unanswered =
-                    userAnswers.filter(
-                        answer =>
-                            answer === null
-                    ).length;
-
-
-                const message =
-                    unanswered > 0
-                        ? `You have ${unanswered} unanswered question(s). Submit anyway?`
-                        : "Are you sure you want to submit the quiz?";
-
+            if (
+                q.explanation
+            ) {
 
                 if (
-                    confirm(message)
+                    typeof q.explanation ===
+                    "object"
                 ) {
 
-                    finishQuiz();
+                    explanation =
+                        q.explanation[language] ||
+                        q.explanation.en;
+
+                } else {
+
+                    explanation =
+                        q.explanation;
 
                 }
 
             }
-        );
 
 
-        /* ==========================================
-           FINISH QUIZ
-        ========================================== */
+            div.innerHTML = `
 
-        function finishQuiz() {
+                <div class="review-title">
 
-            clearInterval(
-                timerInterval
-            );
+                    Q${index + 1}.
+                    ${questionText}
 
+                </div>
 
-            let correct = 0;
+                <div class="review-answer">
 
-            let wrong = 0;
+                    Your Answer:
+                    ${userText}
 
-            let unattempted = 0;
+                </div>
 
+                <div class="review-correct">
 
-            quizQuestions.forEach(
-                (q, index) => {
+                    Correct Answer:
+                    ${correctText}
 
-                    const answer =
-                        userAnswers[index];
+                </div>
 
+                <div class="review-result">
 
-                    if (
-                        answer === null
-                    ) {
+                    ${resultText}
 
-                        unattempted++;
+                </div>
 
-                    } else if (
-                        answer === q.answer
-                    ) {
+                <div class="review-explanation">
 
-                        correct++;
+                    ${explanation}
 
-                    } else {
+                </div>
 
-                        wrong++;
-
-                    }
-
-                }
-            );
+            `;
 
 
-            /* Score */
-
-            const score =
-                (
-                    correct *
-                    CORRECT_MARKS
-                )
-                -
-                (
-                    wrong *
-                    NEGATIVE_MARKS
-                );
-
-
-            const attempted =
-                correct + wrong;
-
-
-            const accuracy =
-                attempted === 0
-                    ? 0
-                    : (
-                        correct /
-                        attempted
-                    ) * 100;
-
-
-            /* Page */
-
-            quizPage.classList.add(
-                "hidden"
-            );
-
-            resultPage.classList.remove(
-                "hidden"
-            );
-
-
-            /* Values */
-
-            document.getElementById(
-                "score"
-            ).textContent =
-                score.toFixed(2);
-
-
-            document.getElementById(
-                "resultTotal"
-            ).textContent =
-                quizQuestions.length;
-
-
-            document.getElementById(
-                "correct"
-            ).textContent =
-                correct;
-
-
-            document.getElementById(
-                "wrong"
-            ).textContent =
-                wrong;
-
-
-            document.getElementById(
-                "unattempted"
-            ).textContent =
-                unattempted;
-
-
-            document.getElementById(
-                "accuracy"
-            ).textContent =
-                accuracy.toFixed(1)
-                + "%";
-
-
-            /* Result Message */
-
-            let resultMessage;
-
-
-            if (accuracy >= 90) {
-
-                resultMessage =
-                    "Excellent! Outstanding performance! 🏆";
-
-            } else if (accuracy >= 75) {
-
-                resultMessage =
-                    "Very good! Keep practicing. 🔥";
-
-            } else if (accuracy >= 60) {
-
-                resultMessage =
-                    "Good effort! You can improve further. 💪";
-
-            } else {
-
-                resultMessage =
-                    "Keep practicing and improve your score. 📚";
-
-            }
-
-
-            document.getElementById(
-                "resultMessage"
-            ).textContent =
-                resultMessage;
-
-
-            createReview();
+            container.appendChild(div);
 
         }
+    );
+
+}
 
 
-        /* ==========================================
-           REVIEW
-        ========================================== */
+// =====================================================
+// OPTION TEXT
+// =====================================================
 
-        function createReview() {
+function getOptionText(q, index) {
 
-            const container =
-                document.getElementById(
-                    "reviewContainer"
-                );
+    if (
+        index === null ||
+        index === undefined
+    ) {
 
+        return "Not Attempted";
 
-            container.innerHTML =
-                "";
-
-
-            quizQuestions.forEach(
-                (q, index) => {
-
-                    const review =
-                        document.createElement(
-                            "div"
-                        );
+    }
 
 
-                    review.className =
-                        "review-item";
+    const option =
+        q.options[index];
 
 
-                    let options =
-                        q.options;
+    if (
+        typeof option === "object"
+    ) {
+
+        return (
+            option[language] ||
+            option.en
+        );
+
+    }
 
 
-                    if (
-                        !Array.isArray(options)
-                    ) {
+    return option;
 
-                        options =
-                            options[
-                                selectedLanguage
-                            ];
-
-                    }
+}
 
 
-                    const correctAnswer =
-                        options[q.answer];
+// =====================================================
+// CATEGORY BUTTONS
+// =====================================================
 
+document
+    .querySelectorAll(".category")
+    .forEach(
+        button => {
 
-                    const selectedAnswer =
-                        userAnswers[index] === null
-                            ? "Not Attempted"
-                            : options[
-                                userAnswers[index]
-                            ];
+            button.addEventListener(
+                "click",
+                () => {
 
+                    const category =
+                        button.dataset.category;
 
-                    const isCorrect =
-                        userAnswers[index] ===
-                        q.answer;
-
-
-                    const explanation =
-                        q.explanation
-                            ? q.explanation[
-                                selectedLanguage
-                              ]
-                            : "Explanation not available.";
-
-
-                    review.innerHTML =
-                        `
-                        <h3>
-                            Q${index + 1}.
-                            ${q.question[
-                                selectedLanguage
-                            ]}
-                        </h3>
-
-                        <p>
-                            <strong>Your Answer:</strong>
-                            ${selectedAnswer}
-                        </p>
-
-                        <p>
-                            <strong>Correct Answer:</strong>
-                            ${correctAnswer}
-                        </p>
-
-                        <p>
-                            <strong>Explanation:</strong>
-                            ${explanation}
-                        </p>
-
-                        <div class="${
-                            isCorrect
-                                ? "review-correct"
-                                : "review-wrong"
-                        }">
-
-                            ${
-                                isCorrect
-                                    ? "✓ Correct"
-                                    : "✗ Wrong"
-                            }
-
-                        </div>
-                        `;
-
-
-                    container.appendChild(
-                        review
-                    );
+                    startQuiz(category);
 
                 }
             );
 
         }
+    );
 
 
-        /* ==========================================
-           RESTART
-        ========================================== */
+// =====================================================
+// BUTTON EVENTS
+// =====================================================
 
-        restartBtn.addEventListener(
-            "click",
-            () => {
+previousBtn.addEventListener(
+    "click",
+    previousQuestion
+);
 
-                startQuiz();
 
-            }
+nextBtn.addEventListener(
+    "click",
+    nextQuestion
+);
+
+
+clearBtn.addEventListener(
+    "click",
+    clearAnswer
+);
+
+
+markBtn.addEventListener(
+    "click",
+    toggleMark
+);
+
+
+submitBtn.addEventListener(
+    "click",
+    () => submitQuiz(false)
+);
+
+
+// =====================================================
+// RESTART
+// =====================================================
+
+restartBtn.addEventListener(
+    "click",
+    () => {
+
+        startQuiz(
+            selectedCategory
         );
 
-
-        /* ==========================================
-           HOME
-        ========================================== */
-
-        homeBtn.addEventListener(
-            "click",
-            () => {
-
-                clearInterval(
-                    timerInterval
-                );
+    }
+);
 
 
-                resultPage.classList.add(
-                    "hidden"
-                );
+// =====================================================
+// HOME
+// =====================================================
 
+homeBtn.addEventListener(
+    "click",
+    () => {
 
-                quizPage.classList.add(
-                    "hidden"
-                );
-
-
-                homePage.classList.remove(
-                    "hidden"
-                );
-
-            }
+        clearInterval(
+            timerInterval
         );
 
+        resultPage.style.display =
+            "none";
 
-        /* ==========================================
-           DARK MODE
-        ========================================== */
+        quizPage.style.display =
+            "none";
 
-        themeBtn.addEventListener(
-            "click",
-            () => {
+        homePage.style.display =
+            "block";
 
-                document.body.classList.toggle(
-                    "dark"
-                );
-
-
-                const dark =
-                    document.body.classList.contains(
-                        "dark"
-                    );
+    }
+);
 
 
-                themeBtn.textContent =
-                    dark
-                        ? "☀️"
-                        : "🌙";
+// =====================================================
+// LANGUAGE SWITCH
+// =====================================================
 
-
-                localStorage.setItem(
-                    "darkMode",
-                    dark
-                );
-
-            }
-        );
-
-
-        /* Load Dark Mode */
+languageBtn.addEventListener(
+    "click",
+    () => {
 
         if (
-            localStorage.getItem(
-                "darkMode"
-            ) === "true"
+            language === "en"
         ) {
 
-            document.body.classList.add(
+            language = "hi";
+
+            languageBtn.textContent =
+                "English";
+
+        } else {
+
+            language = "en";
+
+            languageBtn.textContent =
+                "हिंदी";
+
+        }
+
+
+        if (
+            quizPage.style.display !==
+            "none"
+        ) {
+
+            showQuestion();
+
+        }
+
+    }
+);
+
+
+// =====================================================
+// DARK MODE
+// =====================================================
+
+themeBtn.addEventListener(
+    "click",
+    () => {
+
+        document.body.classList.toggle(
+            "dark"
+        );
+
+
+        if (
+            document.body.classList.contains(
                 "dark"
-            );
+            )
+        ) {
 
             themeBtn.textContent =
                 "☀️";
 
-        }
+            localStorage.setItem(
+                "theme",
+                "dark"
+            );
 
+        } else {
 
-        /* ==========================================
-           LANGUAGE
-        ========================================== */
+            themeBtn.textContent =
+                "🌙";
 
-        languageBtn.addEventListener(
-            "click",
-            () => {
-
-                selectedLanguage =
-                    selectedLanguage === "en"
-                        ? "hi"
-                        : "en";
-
-
-                languageBtn.textContent =
-                    selectedLanguage === "en"
-                        ? "हिन्दी"
-                        : "English";
-
-
-                updateHomeLanguage();
-
-
-                if (
-                    !quizPage.classList.contains(
-                        "hidden"
-                    )
-                ) {
-
-                    showQuestion();
-
-                }
-
-            }
-        );
-
-
-        /* ==========================================
-           HOME LANGUAGE
-        ========================================== */
-
-        function updateHomeLanguage() {
-
-            if (
-                selectedLanguage === "hi"
-            ) {
-
-                document.getElementById(
-                    "heroTitle"
-                ).textContent =
-                    "अपना GK और GS ज्ञान परखें";
-
-
-                document.getElementById(
-                    "heroDescription"
-                ).textContent =
-                    "प्रतियोगी परीक्षाओं की तैयारी के लिए General Knowledge और General Studies का इंटरैक्टिव क्विज़।";
-
-
-                startBtn.textContent =
-                    "All Quiz शुरू करें →";
-
-
-                document.getElementById(
-                    "categoryTitle"
-                ).textContent =
-                    "अपनी Category चुनें";
-
-            } else {
-
-                document.getElementById(
-                    "heroTitle"
-                ).textContent =
-                    "Test Your GK & GS Knowledge";
-
-
-                document.getElementById(
-                    "heroDescription"
-                ).textContent =
-                    "Practice General Knowledge and General Studies with an interactive quiz designed for competitive exams.";
-
-
-                startBtn.textContent =
-                    "Start All Quiz →";
-
-
-                document.getElementById(
-                    "categoryTitle"
-                ).textContent =
-                    "Choose Your Category";
-
-            }
+            localStorage.setItem(
+                "theme",
+                "light"
+            );
 
         }
 
-    </script>
+    }
+);
+
+
+// =====================================================
+// LOAD SAVED THEME
+// =====================================================
+
+const savedTheme =
+    localStorage.getItem(
+        "theme"
+    );
+
+
+if (
+    savedTheme === "dark"
+) {
+
+    document.body.classList.add(
+        "dark"
+    );
+
+    themeBtn.textContent =
+        "☀️";
+
+}
+
+
+// =====================================================
+// INITIAL PAGE
+// =====================================================
+
+quizPage.style.display =
+    "none";
+
+resultPage.style.display =
+    "none";
+
+homePage.style.display =
+    "block";
+
+</script>
 
 </body>
-
 </html>
