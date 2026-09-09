@@ -1,236 +1,620 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GK & GS Quiz</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GK Master - GK & GS Quiz</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-        body {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --bg: #f1f5f9;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --success: #16a34a;
+    --danger: #dc2626;
+    --warning: #f59e0b;
+}
 
-        .quiz-container {
-            width: 100%;
-            max-width: 850px;
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
-        }
+body {
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #eeeeee;
-            padding-bottom: 20px;
-            margin-bottom: 25px;
-        }
+/* NAVBAR */
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            color: #173b63;
-        }
+.navbar {
+    height: 70px;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        .timer {
-            background: #173b63;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-        }
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary);
+}
 
-        .progress-text {
-            color: #555;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
+.logo span {
+    color: var(--text);
+}
 
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background: #dddddd;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 25px;
-        }
+.nav-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
 
-        .progress-fill {
-            height: 100%;
-            width: 0%;
-            background: #1769aa;
-            transition: width 0.3s;
-        }
+.nav-btn {
+    border: 1px solid var(--border);
+    background: var(--card);
+    padding: 9px 14px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-        .question {
-            font-size: 23px;
-            font-weight: bold;
-            line-height: 1.5;
-            color: #222222;
-            margin-bottom: 25px;
-        }
+/* HOME */
 
-        .option {
-            border: 2px solid #dddddd;
-            border-radius: 12px;
-            padding: 15px;
-            margin: 12px 0;
-            cursor: pointer;
-            font-size: 17px;
-            transition: 0.2s;
-        }
+.home {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
 
-        .option:hover {
-            border-color: #1769aa;
-            background: #f0f7ff;
-        }
+.hero {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: white;
+    border-radius: 24px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(37, 99, 235, .25);
+}
 
-        .option.selected {
-            border-color: #1769aa;
-            background: #e7f2ff;
-        }
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
 
-        .buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 25px;
-            gap: 10px;
-        }
+.hero p {
+    font-size: 18px;
+    opacity: .9;
+    margin-bottom: 30px;
+}
 
-        button {
-            border: none;
-            padding: 13px 25px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-        }
+.start-btn {
+    background: white;
+    color: var(--primary);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        #prevBtn {
-            background: #dddddd;
-            color: #222222;
-        }
+.section-title {
+    text-align: center;
+    margin: 45px 0 25px;
+    font-size: 28px;
+}
 
-        #nextBtn {
-            background: #1769aa;
-            color: white;
-        }
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
 
-        #submitBtn {
-            background: #198754;
-            color: white;
-            display: none;
-        }
+.category {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: .2s;
+}
 
-        .result {
-            text-align: center;
-            display: none;
-        }
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    border-color: var(--primary);
+}
 
-        .result h1 {
-            color: #173b63;
-            margin-bottom: 15px;
-            font-size: 32px;
-        }
+.category-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
 
-        .score {
-            font-size: 55px;
-            font-weight: bold;
-            color: #198754;
-            margin: 20px;
-        }
+.category h3 {
+    margin-bottom: 7px;
+}
 
-        .result p {
-            font-size: 18px;
-            margin: 10px;
-        }
+.category p {
+    color: var(--muted);
+    font-size: 14px;
+}
 
-        .restart {
-            background: #1769aa;
-            color: white;
-            margin-top: 20px;
-        }
+/* QUIZ */
 
-        @media (max-width: 600px) {
-            .quiz-container {
-                padding: 20px;
-            }
+.quiz-page {
+    display: none;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 20px;
+}
 
-            .header {
-                flex-direction: column;
-                gap: 15px;
-            }
+.quiz-header {
+    background: var(--card);
+    padding: 18px 22px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
-            .question {
-                font-size: 19px;
-            }
+.quiz-title {
+    font-weight: bold;
+    font-size: 20px;
+}
 
-            .buttons {
-                flex-direction: column;
-            }
+.timer {
+    background: #fee2e2;
+    color: var(--danger);
+    padding: 10px 18px;
+    border-radius: 9px;
+    font-weight: bold;
+}
 
-            button {
-                width: 100%;
-            }
-        }
-    </style>
+.quiz-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+}
+
+.question-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.question-info {
+    color: var(--muted);
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.progress {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--primary);
+    width: 0%;
+    transition: .3s;
+}
+
+.question {
+    font-size: 23px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.option {
+    border: 2px solid var(--border);
+    padding: 16px;
+    border-radius: 11px;
+    margin: 12px 0;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.option:hover {
+    border-color: var(--primary);
+    background: #eff6ff;
+}
+
+.option.selected {
+    border-color: var(--primary);
+    background: #dbeafe;
+}
+
+.option.correct {
+    border-color: var(--success);
+    background: #dcfce7;
+}
+
+.option.wrong {
+    border-color: var(--danger);
+    background: #fee2e2;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    gap: 10px;
+}
+
+.control-btn {
+    border: none;
+    padding: 12px 18px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.prev {
+    background: #e2e8f0;
+}
+
+.next {
+    background: var(--primary);
+    color: white;
+}
+
+.mark {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.clear {
+    background: #f1f5f9;
+}
+
+/* PALETTE */
+
+.palette-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 22px;
+    height: fit-content;
+}
+
+.palette-card h3 {
+    margin-bottom: 18px;
+}
+
+.palette {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 9px;
+}
+
+.q-number {
+    height: 40px;
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.q-number.answered {
+    background: #dcfce7;
+    color: #166534;
+    border-color: #86efac;
+}
+
+.q-number.marked {
+    background: #fef3c7;
+    color: #92400e;
+    border-color: #fbbf24;
+}
+
+.submit {
+    width: 100%;
+    background: var(--success);
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 9px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* RESULT */
+
+.result-page {
+    display: none;
+    max-width: 850px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.result-card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+.result-card h1 {
+    margin-bottom: 10px;
+}
+
+.big-score {
+    font-size: 65px;
+    color: var(--primary);
+    font-weight: 800;
+    margin: 25px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.stat {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.stat strong {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.restart {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* DARK MODE */
+
+body.dark {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --border: #334155;
+}
+
+body.dark .option:hover {
+    background: #243b55;
+}
+
+body.dark .option.selected {
+    background: #1e3a5f;
+}
+
+body.dark .q-number {
+    background: #1e293b;
+    color: white;
+}
+
+body.dark .stat {
+    background: #0f172a;
+}
+
+/* MOBILE */
+
+@media(max-width: 800px) {
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quiz-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 35px 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .quiz-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .categories {
+        grid-template-columns: 1fr;
+    }
+
+    .question {
+        font-size: 19px;
+    }
+
+    .controls {
+        flex-wrap: wrap;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <div class="quiz-container">
+<!-- NAVBAR -->
 
-        <div id="quizScreen">
+<nav class="navbar">
 
-            <div class="header">
-                <div class="logo">🇮🇳 GK & GS QUIZ</div>
+    <div class="logo">
+        GK<span>Master</span>
+    </div>
 
-                <div class="timer">
-                    ⏱ <span id="time">10:00</span>
-                </div>
-            </div>
+    <div class="nav-right">
+        <button class="nav-btn" onclick="toggleDarkMode()">
+            🌙
+        </button>
+    </div>
 
-            <div class="progress-text">
-                Question <span id="questionNumber">1</span>
-                of
+</nav>
+
+
+<!-- HOME PAGE -->
+
+<section class="home" id="home">
+
+    <div class="hero">
+
+        <h1>Master Your GK & GS</h1>
+
+        <p>
+            Practice smart. Improve your score.
+            Prepare for competitive examinations.
+        </p>
+
+        <button class="start-btn" onclick="startQuiz()">
+            🚀 Start Quiz
+        </button>
+
+    </div>
+
+
+    <h2 class="section-title">
+        Choose Your Category
+    </h2>
+
+
+    <div class="categories">
+
+        <div class="category" onclick="startQuiz()">
+            <div class="category-icon">🌍</div>
+            <h3>General Knowledge</h3>
+            <p>Important GK Questions</p>
+        </div>
+
+        <div class="category" onclick="startQuiz()">
+            <div class="category-icon">📚</div>
+            <h3>General Studies</h3>
+            <p>GS Practice Questions</p>
+        </div>
+
+        <div class="category" onclick="startQuiz()">
+            <div class="category-icon">🇮🇳</div>
+            <h3>Indian Polity</h3>
+            <p>Constitution & Government</p>
+        </div>
+
+        <div class="category" onclick="startQuiz()">
+            <div class="category-icon">🔬</div>
+            <h3>Science</h3>
+            <p>Physics, Chemistry & Biology</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUIZ PAGE -->
+
+<section class="quiz-page" id="quizPage">
+
+    <div class="quiz-header">
+
+        <div class="quiz-title">
+            🇮🇳 GK & GS Mock Test
+        </div>
+
+        <div class="timer">
+            ⏱️ <span id="timer">10:00</span>
+        </div>
+
+    </div>
+
+
+    <div class="quiz-layout">
+
+        <div class="question-card">
+
+            <div class="question-info">
+                Question
+                <span id="questionNumber">1</span>
+                /
                 <span id="totalQuestions">15</span>
             </div>
 
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
+            <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
             </div>
 
-            <div id="question" class="question"></div>
+            <h2 class="question" id="question">
+                Loading question...
+            </h2>
 
             <div id="options"></div>
 
-            <div class="buttons">
 
-                <button id="prevBtn" onclick="previousQuestion()">
+            <div class="controls">
+
+                <button class="control-btn prev"
+                        onclick="previousQuestion()">
                     ← Previous
                 </button>
 
-                <button id="nextBtn" onclick="nextQuestion()">
-                    Next →
+                <button class="control-btn clear"
+                        onclick="clearAnswer()">
+                    Clear
                 </button>
 
-                <button id="submitBtn" onclick="submitQuiz()">
-                    Submit Quiz
+                <button class="control-btn mark"
+                        onclick="markQuestion()">
+                    ⭐ Mark
+                </button>
+
+                <button class="control-btn next"
+                        onclick="nextQuestion()">
+                    Next →
                 </button>
 
             </div>
@@ -238,505 +622,699 @@
         </div>
 
 
-        <div id="resultScreen" class="result">
+        <!-- QUESTION PALETTE -->
 
-            <h1>🎉 Quiz Completed!</h1>
+        <div class="palette-card">
 
-            <p>Your Score</p>
+            <h3>Question Palette</h3>
 
-            <div class="score">
-                <span id="score">0</span> /
-                <span id="maxScore">15</span>
-            </div>
+            <div class="palette" id="palette"></div>
 
-            <p id="percentage"></p>
-
-            <p id="message"></p>
-
-            <button class="restart" onclick="restartQuiz()">
-                🔄 Restart Quiz
+            <button class="submit"
+                    onclick="submitQuiz()">
+                Submit Test
             </button>
 
         </div>
 
     </div>
 
+</section>
 
-    <script>
-
-        const questions = [
-
-            {
-                question: "भारत का राष्ट्रीय पशु कौन सा है?",
-                options: [
-                    "शेर",
-                    "बाघ",
-                    "हाथी",
-                    "चीता"
-                ],
-                answer: 1
-            },
-
-            {
-                question: "भारत का संविधान कब लागू हुआ था?",
-                options: [
-                    "15 अगस्त 1947",
-                    "26 नवंबर 1949",
-                    "26 जनवरी 1950",
-                    "2 अक्टूबर 1950"
-                ],
-                answer: 2
-            },
-
-            {
-                question: "भारत की राजधानी क्या है?",
-                options: [
-                    "मुंबई",
-                    "नई दिल्ली",
-                    "कोलकाता",
-                    "लखनऊ"
-                ],
-                answer: 1
-            },
-
-            {
-                question: "भारत का सबसे बड़ा राज्य क्षेत्रफल के आधार पर कौन सा है?",
-                options: [
-                    "उत्तर प्रदेश",
-                    "मध्य प्रदेश",
-                    "राजस्थान",
-                    "महाराष्ट्र"
-                ],
-                answer: 2
-            },
-
-            {
-                question: "भारतीय संविधान के निर्माता के रूप में किसे जाना जाता है?",
-                options: [
-                    "महात्मा गांधी",
-                    "डॉ. बी. आर. अंबेडकर",
-                    "जवाहरलाल नेहरू",
-                    "सरदार पटेल"
-                ],
-                answer: 1
-            },
-
-            {
-                question: "पृथ्वी का एकमात्र प्राकृतिक उपग्रह कौन सा है?",
-                options: [
-                    "मंगल",
-                    "चंद्रमा",
-                    "सूर्य",
-                    "शुक्र"
-                ],
-                answer: 1
-            },
-
-            {
-                question: "जल का रासायनिक सूत्र क्या है?",
-                options: [
-                    "CO₂",
-                    "O₂",
-                    "H₂O",
-                    "H₂SO₄"
-                ],
-                answer: 2
-            },
-
-            {
-                question: "भारत में हरित क्रांति के जनक के रूप में किसे जाना जाता है?",
-                options: [
-                    "एम. एस. स्वामीनाथन",
-                    "विक्रम साराभाई",
-                    "होमी भाभा",
-                    "सी. वी. रमन"
-                ],
-                answer: 0
-            },
-
-            {
-                question: "सूर्य के सबसे निकट कौन सा ग्रह है?",
-                options: [
-                    "पृथ्वी",
-                    "शुक्र",
-                    "बुध",
-                    "मंगल"
-                ],
-                answer: 2
-            },
-
-            {
-                question: "भारतीय रिजर्व बैंक की स्थापना किस वर्ष हुई थी?",
-                options: [
-                    "1935",
-                    "1947",
-                    "1950",
-                    "1925"
-                ],
-                answer: 0
-            },
-
-            {
-                question: "भारत का राष्ट्रीय पक्षी कौन सा है?",
-                options: [
-                    "तोता",
-                    "मोर",
-                    "कबूतर",
-                    "गरुड़"
-                ],
-                answer: 1
-            },
 
-            {
-                question: "ताजमहल किस शहर में स्थित है?",
-                options: [
-                    "दिल्ली",
-                    "जयपुर",
-                    "आगरा",
-                    "लखनऊ"
-                ],
-                answer: 2
-            },
+<!-- RESULT PAGE -->
 
-            {
-                question: "मानव शरीर में रक्त को पंप करने वाला अंग कौन सा है?",
-                options: [
-                    "फेफड़ा",
-                    "हृदय",
-                    "यकृत",
-                    "गुर्दा"
-                ],
-                answer: 1
-            },
-
-            {
-                question: "भारत का राष्ट्रीय फूल कौन सा है?",
-                options: [
-                    "गुलाब",
-                    "कमल",
-                    "गेंदा",
-                    "सूरजमुखी"
-                ],
-                answer: 1
-            },
-
-            {
-                question: "ISRO का पूरा नाम क्या है?",
-                options: [
-                    "Indian Space Research Organisation",
-                    "Indian Science Research Organisation",
-                    "International Space Research Organisation",
-                    "Indian Satellite Research Office"
-                ],
-                answer: 0
-            }
-
-        ];
-
-
-        let currentQuestion = 0;
-
-        let userAnswers =
-            new Array(questions.length).fill(null);
-
-        let timeLeft = 600;
-
-        let timer;
-
-
-        document.getElementById("totalQuestions").innerText =
-            questions.length;
-
-        document.getElementById("maxScore").innerText =
-            questions.length;
-
-
-        function startTimer() {
-
-            timer = setInterval(function () {
-
-                let minutes =
-                    Math.floor(timeLeft / 60);
-
-                let seconds =
-                    timeLeft % 60;
-
-                document.getElementById("time").innerText =
-                    String(minutes).padStart(2, "0")
-                    + ":"
-                    + String(seconds).padStart(2, "0");
-
-
-                if (timeLeft <= 0) {
-
-                    clearInterval(timer);
-
-                    submitQuiz();
-
-                }
-
-                timeLeft--;
-
-            }, 1000);
-        }
-
-
-        function loadQuestion() {
-
-            const q =
-                questions[currentQuestion];
-
-
-            document.getElementById("questionNumber").innerText =
-                currentQuestion + 1;
-
-
-            document.getElementById("question").innerText =
-                q.question;
-
-
-            const optionsDiv =
-                document.getElementById("options");
-
-
-            optionsDiv.innerHTML = "";
-
-
-            q.options.forEach(function (option, index) {
-
-                const div =
-                    document.createElement("div");
-
-
-                div.className = "option";
-
-
-                div.innerText =
-                    String.fromCharCode(65 + index)
-                    + ". "
-                    + option;
-
-
-                if (userAnswers[currentQuestion] === index) {
-
-                    div.classList.add("selected");
-
-                }
-
-
-                div.onclick = function () {
-
-                    userAnswers[currentQuestion] =
-                        index;
-
-
-                    document
-                        .querySelectorAll(".option")
-                        .forEach(function (item) {
-
-                            item.classList.remove("selected");
-
-                        });
-
-
-                    div.classList.add("selected");
-
-                };
-
-
-                optionsDiv.appendChild(div);
-
-            });
-
-
-            let progress =
-                ((currentQuestion + 1)
-                / questions.length)
-                * 100;
-
-
-            document.getElementById("progressFill").style.width =
-                progress + "%";
-
-
-            if (currentQuestion === 0) {
-
-                document.getElementById("prevBtn").style.visibility =
-                    "hidden";
-
-            } else {
-
-                document.getElementById("prevBtn").style.visibility =
-                    "visible";
-
-            }
-
-
-            if (currentQuestion === questions.length - 1) {
-
-                document.getElementById("nextBtn").style.display =
-                    "none";
-
-                document.getElementById("submitBtn").style.display =
-                    "block";
-
-            } else {
-
-                document.getElementById("nextBtn").style.display =
-                    "block";
-
-                document.getElementById("submitBtn").style.display =
-                    "none";
-
-            }
-
-        }
-
-
-        function nextQuestion() {
-
-            if (userAnswers[currentQuestion] === null) {
-
-                alert("Please select an answer first.");
-
-                return;
-
-            }
-
-
-            if (currentQuestion <
-                questions.length - 1) {
-
-                currentQuestion++;
-
-                loadQuestion();
-
-            }
-
-        }
-
-
-        function previousQuestion() {
-
-            if (currentQuestion > 0) {
-
-                currentQuestion--;
-
-                loadQuestion();
-
-            }
-
-        }
-
-
-        function submitQuiz() {
+<section class="result-page" id="resultPage">
+
+    <div class="result-card">
+
+        <h1>🎉 Test Completed</h1>
+
+        <p>Your final performance</p>
+
+        <div class="big-score">
+            <span id="finalScore">0</span>
+            /
+            <span id="finalTotal">15</span>
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong id="correct">0</strong>
+                <span>Correct</span>
+            </div>
+
+            <div class="stat">
+                <strong id="wrong">0</strong>
+                <span>Wrong</span>
+            </div>
+
+            <div class="stat">
+                <strong id="unattempted">0</strong>
+                <span>Unattempted</span>
+            </div>
+
+        </div>
+
+        <h2 id="percentage">
+            0%
+        </h2>
+
+        <p id="resultMessage">
+            Keep practicing!
+        </p>
+
+        <br>
+
+        <button class="restart"
+                onclick="restartQuiz()">
+            🔄 Try Again
+        </button>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================
+   QUESTIONS
+========================= */
+
+const questions = [
+
+    {
+        question: "भारत का राष्ट्रीय पशु कौन सा है?",
+        options: [
+            "शेर",
+            "बाघ",
+            "हाथी",
+            "चीता"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "भारत का संविधान कब लागू हुआ?",
+        options: [
+            "15 अगस्त 1947",
+            "26 नवंबर 1949",
+            "26 जनवरी 1950",
+            "2 अक्टूबर 1950"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "भारत की राजधानी क्या है?",
+        options: [
+            "मुंबई",
+            "नई दिल्ली",
+            "कोलकाता",
+            "लखनऊ"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "क्षेत्रफल की दृष्टि से भारत का सबसे बड़ा राज्य कौन सा है?",
+        options: [
+            "उत्तर प्रदेश",
+            "मध्य प्रदेश",
+            "राजस्थान",
+            "महाराष्ट्र"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "भारत के संविधान की प्रारूप समिति के अध्यक्ष कौन थे?",
+        options: [
+            "महात्मा गांधी",
+            "डॉ. बी. आर. अंबेडकर",
+            "जवाहरलाल नेहरू",
+            "सरदार पटेल"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "पृथ्वी का प्राकृतिक उपग्रह कौन सा है?",
+        options: [
+            "मंगल",
+            "चंद्रमा",
+            "शुक्र",
+            "बुध"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "जल का रासायनिक सूत्र क्या है?",
+        options: [
+            "CO₂",
+            "O₂",
+            "H₂O",
+            "H₂SO₄"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "हरित क्रांति से भारत में किस वैज्ञानिक का नाम प्रमुख रूप से जुड़ा है?",
+        options: [
+            "एम. एस. स्वामीनाथन",
+            "विक्रम साराभाई",
+            "होमी भाभा",
+            "सी. वी. रमन"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "सूर्य के सबसे निकट कौन सा ग्रह है?",
+        options: [
+            "पृथ्वी",
+            "शुक्र",
+            "बुध",
+            "मंगल"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "भारतीय रिजर्व बैंक की स्थापना किस वर्ष हुई?",
+        options: [
+            "1935",
+            "1947",
+            "1950",
+            "1925"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "भारत का राष्ट्रीय पक्षी कौन सा है?",
+        options: [
+            "तोता",
+            "मोर",
+            "कबूतर",
+            "गरुड़"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "ताजमहल कहाँ स्थित है?",
+        options: [
+            "दिल्ली",
+            "जयपुर",
+            "आगरा",
+            "लखनऊ"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "मानव शरीर में रक्त को पंप करने वाला अंग कौन सा है?",
+        options: [
+            "फेफड़ा",
+            "हृदय",
+            "यकृत",
+            "गुर्दा"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "भारत का राष्ट्रीय फूल कौन सा है?",
+        options: [
+            "गुलाब",
+            "कमल",
+            "गेंदा",
+            "सूरजमुखी"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "ISRO का पूरा नाम क्या है?",
+        options: [
+            "Indian Space Research Organisation",
+            "Indian Science Research Organisation",
+            "International Space Research Organisation",
+            "Indian Satellite Research Office"
+        ],
+        answer: 0
+    }
+
+];
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+let currentQuestion = 0;
+
+let answers =
+    new Array(questions.length).fill(null);
+
+let marked =
+    new Array(questions.length).fill(false);
+
+let timeLeft = 600;
+
+let timer;
+
+
+/* =========================
+   START QUIZ
+========================= */
+
+function startQuiz() {
+
+    document.getElementById("home").style.display =
+        "none";
+
+    document.getElementById("quizPage").style.display =
+        "block";
+
+    currentQuestion = 0;
+
+    answers =
+        new Array(questions.length).fill(null);
+
+    marked =
+        new Array(questions.length).fill(false);
+
+    timeLeft = 600;
+
+    clearInterval(timer);
+
+    loadQuestion();
+
+    createPalette();
+
+    startTimer();
+}
+
+
+/* =========================
+   TIMER
+========================= */
+
+function startTimer() {
+
+    updateTimer();
+
+    timer = setInterval(function() {
+
+        timeLeft--;
+
+        updateTimer();
+
+        if (timeLeft <= 0) {
 
             clearInterval(timer);
 
+            submitQuiz();
 
-            let score = 0;
+        }
 
-
-            questions.forEach(function (q, index) {
-
-                if (userAnswers[index] === q.answer) {
-
-                    score++;
-
-                }
-
-            });
+    }, 1000);
+}
 
 
-            document.getElementById("quizScreen").style.display =
-                "none";
+function updateTimer() {
+
+    let minutes =
+        Math.floor(timeLeft / 60);
+
+    let seconds =
+        timeLeft % 60;
+
+    document.getElementById("timer").innerText =
+        String(minutes).padStart(2, "0")
+        + ":"
+        + String(seconds).padStart(2, "0");
+}
 
 
-            document.getElementById("resultScreen").style.display =
-                "block";
+/* =========================
+   LOAD QUESTION
+========================= */
+
+function loadQuestion() {
+
+    let q =
+        questions[currentQuestion];
+
+    document.getElementById("questionNumber").innerText =
+        currentQuestion + 1;
+
+    document.getElementById("totalQuestions").innerText =
+        questions.length;
+
+    document.getElementById("question").innerText =
+        q.question;
+
+    let progress =
+        ((currentQuestion + 1)
+        / questions.length) * 100;
+
+    document.getElementById("progressBar").style.width =
+        progress + "%";
 
 
-            document.getElementById("score").innerText =
-                score;
+    let options =
+        document.getElementById("options");
+
+    options.innerHTML = "";
 
 
-            let percentage =
-                Math.round(
-                    (score / questions.length) * 100
-                );
+    q.options.forEach(function(option, index) {
+
+        let div =
+            document.createElement("div");
+
+        div.className = "option";
+
+        div.innerText =
+            String.fromCharCode(65 + index)
+            + ". "
+            + option;
 
 
-            document.getElementById("percentage").innerText =
-                "Percentage: " + percentage + "%";
+        if (answers[currentQuestion] === index) {
 
-
-            let message;
-
-
-            if (percentage >= 80) {
-
-                message =
-                    "🔥 Excellent! Your GK preparation is strong.";
-
-            }
-
-            else if (percentage >= 60) {
-
-                message =
-                    "👍 Good job! Keep practicing.";
-
-            }
-
-            else if (percentage >= 40) {
-
-                message =
-                    "📚 Keep studying and improve your score.";
-
-            }
-
-            else {
-
-                message =
-                    "💪 Don't give up! Practice more.";
-
-            }
-
-
-            document.getElementById("message").innerText =
-                message;
+            div.classList.add("selected");
 
         }
 
 
-        function restartQuiz() {
+        div.onclick = function() {
 
-            clearInterval(timer);
-
-            currentQuestion = 0;
-
-            userAnswers =
-                new Array(questions.length).fill(null);
-
-            timeLeft = 600;
-
-            document.getElementById("quizScreen").style.display =
-                "block";
-
-            document.getElementById("resultScreen").style.display =
-                "none";
+            answers[currentQuestion] =
+                index;
 
             loadQuestion();
 
-            startTimer();
+            createPalette();
+
+        };
+
+
+        options.appendChild(div);
+
+    });
+
+}
+
+
+/* =========================
+   QUESTION PALETTE
+========================= */
+
+function createPalette() {
+
+    let palette =
+        document.getElementById("palette");
+
+    palette.innerHTML = "";
+
+
+    questions.forEach(function(q, index) {
+
+        let button =
+            document.createElement("button");
+
+        button.className = "q-number";
+
+        button.innerText =
+            index + 1;
+
+
+        if (answers[index] !== null) {
+
+            button.classList.add("answered");
 
         }
 
 
+        if (marked[index]) {
+
+            button.classList.remove("answered");
+
+            button.classList.add("marked");
+
+        }
+
+
+        button.onclick = function() {
+
+            currentQuestion = index;
+
+            loadQuestion();
+
+            createPalette();
+
+        };
+
+
+        palette.appendChild(button);
+
+    });
+
+}
+
+
+/* =========================
+   NEXT
+========================= */
+
+function nextQuestion() {
+
+    if (currentQuestion <
+        questions.length - 1) {
+
+        currentQuestion++;
+
         loadQuestion();
 
-        startTimer();
+        createPalette();
 
-    </script>
+    }
+
+}
+
+
+/* =========================
+   PREVIOUS
+========================= */
+
+function previousQuestion() {
+
+    if (currentQuestion > 0) {
+
+        currentQuestion--;
+
+        loadQuestion();
+
+        createPalette();
+
+    }
+
+}
+
+
+/* =========================
+   CLEAR ANSWER
+========================= */
+
+function clearAnswer() {
+
+    answers[currentQuestion] =
+        null;
+
+    loadQuestion();
+
+    createPalette();
+
+}
+
+
+/* =========================
+   MARK QUESTION
+========================= */
+
+function markQuestion() {
+
+    marked[currentQuestion] =
+        !marked[currentQuestion];
+
+    createPalette();
+
+}
+
+
+/* =========================
+   SUBMIT
+========================= */
+
+function submitQuiz() {
+
+    clearInterval(timer);
+
+    let correct = 0;
+
+    let wrong = 0;
+
+    let unattempted = 0;
+
+
+    questions.forEach(function(q, index) {
+
+        if (answers[index] === null) {
+
+            unattempted++;
+
+        }
+
+        else if (answers[index] === q.answer) {
+
+            correct++;
+
+        }
+
+        else {
+
+            wrong++;
+
+        }
+
+    });
+
+
+    let percentage =
+        Math.round(
+            (correct / questions.length) * 100
+        );
+
+
+    document.getElementById("quizPage").style.display =
+        "none";
+
+    document.getElementById("resultPage").style.display =
+        "block";
+
+
+    document.getElementById("finalScore").innerText =
+        correct;
+
+    document.getElementById("finalTotal").innerText =
+        questions.length;
+
+    document.getElementById("correct").innerText =
+        correct;
+
+    document.getElementById("wrong").innerText =
+        wrong;
+
+    document.getElementById("unattempted").innerText =
+        unattempted;
+
+    document.getElementById("percentage").innerText =
+        percentage + "%";
+
+
+    let message;
+
+
+    if (percentage >= 80) {
+
+        message =
+            "🔥 Excellent performance! Keep it up.";
+
+    }
+
+    else if (percentage >= 60) {
+
+        message =
+            "👍 Good performance! More practice will make you stronger.";
+
+    }
+
+    else if (percentage >= 40) {
+
+        message =
+            "📚 Keep practicing and revise your weak topics.";
+
+    }
+
+    else {
+
+        message =
+            "💪 Don't give up. Start practicing regularly.";
+
+    }
+
+
+    document.getElementById("resultMessage").innerText =
+        message;
+
+}
+
+
+/* =========================
+   RESTART
+========================= */
+
+function restartQuiz() {
+
+    document.getElementById("resultPage").style.display =
+        "none";
+
+    document.getElementById("home").style.display =
+        "block";
+
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+function toggleDarkMode() {
+
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+
+        localStorage.setItem("darkMode", "on");
+
+    }
+
+    else {
+
+        localStorage.setItem("darkMode", "off");
+
+    }
+
+}
+
+
+/* SAVE DARK MODE */
+
+if (localStorage.getItem("darkMode") === "on") {
+
+    document.body.classList.add("dark");
+
+}
+
+</script>
 
 </body>
 </html>
